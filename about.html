@@ -201,8 +201,8 @@
             color: var(--text-main);
         }
 
-        /* FLAG FEATURE DISPLAY */
-        .flag-display {
+        /* MEDIA DISPLAY BOXES (Flag & Crest) */
+        .media-display {
             display: flex;
             align-items: center;
             gap: 2.5rem;
@@ -215,7 +215,7 @@
             justify-content: center;
         }
 
-        .flag-img {
+        .media-img-flag {
             width: 280px;
             height: 180px;
             object-fit: cover;
@@ -224,21 +224,33 @@
             box-shadow: 0 0 25px rgba(197, 160, 89, 0.25);
         }
 
-        .flag-content {
+        .media-img-crest {
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 2px solid var(--border-gold);
+            background: #000;
+            box-shadow: 0 0 25px rgba(197, 160, 89, 0.25);
+            padding: 8px;
+        }
+
+        .media-content {
             flex: 1;
             min-width: 280px;
         }
 
-        .flag-content h3 {
+        .media-content h3 {
             color: var(--text-gold);
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        .flag-content p {
+        .media-content p {
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 1rem;
+            line-height: 1.7;
         }
 
         .grid-2 {
@@ -335,7 +347,7 @@
             .hero-title {
                 font-size: 2rem;
             }
-            .flag-display {
+            .media-display {
                 padding: 1.5rem;
             }
         }
@@ -347,7 +359,7 @@
     <header>
         <div class="nav-container">
             <a href="index.html" class="brand">
-                <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Sovereign Margraviate of Danuvius Crest" class="brand-crest">
+                <img src="state.crest.png" alt="Sovereign Margraviate of Danuvius Crest" class="brand-crest">
                 <div class="brand-text">
                     <h1>Sovereign Margraviate of Danuvius</h1>
                     <p>Official State Portal</p>
@@ -372,7 +384,7 @@
         <span class="section-tag">Heritage, Mythos & Sovereign Foundation</span>
         <h1 class="hero-title">About the Margraviate</h1>
         <p class="hero-subtitle">
-            Exploring the ancient river deity lineage, the martial legacy of Scottish Mercenaries, and the sovereign symbolism of the Sovereign Margraviate of Danuvius.
+            Exploring the ancient river deity lineage, the martial legacy of Scottish Mercenaries, and the sovereign heraldry of the House of Ister.
         </p>
         <div class="gold-divider"></div>
     </section>
@@ -380,15 +392,27 @@
     <!-- MAIN CONTAINER -->
     <div class="main-container">
 
-        <!-- STATE FLAG & SYMBOLISM DISPLAY -->
+        <!-- STATE FLAG DISPLAY -->
         <section class="card">
-            <div class="flag-display">
-                <img src="danubia flag.png" alt="State Flag of Danuvius" class="flag-img">
-                <div class="flag-content">
+            <div class="media-display">
+                <img src="danubia-flag.png" alt="State Flag of Danuvius" class="media-img-flag">
+                <div class="media-content">
                     <span class="section-tag">Vexillology & Sovereign Emblems</span>
                     <h3>The National Flag of Danuvius</h3>
                     <p>
-                        The official banner of the Sovereign Margraviate features deep Danubian navy blue paired with sovereign imperial gold. The navy field represents the eternal flow and depth of the Danube River, while the gold charged insignia symbolises the divine authority, vigilance, and enduring constitutional reign of the House of Ister.
+                        The official banner of the Sovereign Margraviate features deep Danubian navy blue paired with sovereign imperial gold. The navy field represents the eternal flow and depth of the Danube River, while the gold charged insignia symbolizes the divine authority, vigilance, and enduring constitutional reign of the House of Ister.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STATE CREST & HERALDRY DISPLAY -->
+            <div class="media-display">
+                <img src="state.crest.png" alt="State Crest of Danuvius" class="media-img-crest">
+                <div class="media-content">
+                    <span class="section-tag">Great Seal & State Heraldry</span>
+                    <h3>The State Crest & Symbolism</h3>
+                    <p>
+                        The Grand State Crest is a masterwork of heraldic design encapsulating the sovereignty and history of the realm. It is surmounted by the majestic <strong>Margravial Crown</strong>, signifying sovereign royal authority, and features pristine white griffins acting as divine guardians. Nested at the base is the <strong>Ister Dynasty Crest</strong>, uniting dynastic continuity with the sweeping blue and gold waves of the Danube River.
                     </p>
                 </div>
             </div>
@@ -438,7 +462,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-content">
-            <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Crest" class="footer-crest">
+            <img src="state.crest.png" alt="Crest" class="footer-crest">
             <p class="footer-text">
                 Published under the Authority of the Margravial Chancery of Danuvius. All statutory rights, sovereign prerogatives, and cryptographic registers reserved under the Foundational Charter.
             </p>
