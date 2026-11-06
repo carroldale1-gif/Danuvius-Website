@@ -235,30 +235,9 @@
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .tier-box.featured {
-            border-color: var(--border-gold);
-            background: rgba(197, 160, 89, 0.05);
-            box-shadow: var(--shadow-gold);
-        }
-
         .tier-box:hover {
             transform: translateY(-5px);
             border-color: var(--border-gold);
-        }
-
-        .badge-popular {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--border-gold);
-            color: #000;
-            font-family: 'Cinzel', serif;
-            font-size: 0.65rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            letter-spacing: 1px;
         }
 
         .tier-title {
@@ -340,21 +319,18 @@
             box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
         }
 
-        .btn-disabled {
-            width: 100%;
+        .coming-soon-text {
             text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            border: 1px solid rgba(255, 255, 255, 0.15);
             font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
             font-weight: 600;
+            color: var(--text-muted);
             text-transform: uppercase;
+            letter-spacing: 2px;
             padding: 0.8rem 1rem;
+            border: 1px dashed rgba(197, 160, 89, 0.25);
             border-radius: 4px;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-            cursor: not-allowed;
-            display: inline-block;
+            background: rgba(0, 0, 0, 0.2);
         }
 
         /* VERIFIER INTERFACE */
@@ -525,8 +501,7 @@
                 </div>
 
                 <!-- STANDARD TIER -->
-                <div class="tier-box featured">
-                    <span class="badge-popular">Standard Tier</span>
+                <div class="tier-box">
                     <div>
                         <h3 class="tier-title">Standard Tier</h3>
                         <div class="tier-price">£20 <span>one-off</span></div>
@@ -542,7 +517,7 @@
                             <li class="disabled">Physical Sovereign Danuvius Flag</li>
                         </ul>
                     </div>
-                    <div class="btn-disabled">Coming Soon</div>
+                    <div class="coming-soon-text">Coming Soon</div>
                 </div>
 
                 <!-- PREMIUM TIER -->
@@ -562,7 +537,7 @@
                             <li><strong>Sovereign Danuvius Flag Included</strong></li>
                         </ul>
                     </div>
-                    <div class="btn-disabled">Coming Soon</div>
+                    <div class="coming-soon-text">Coming Soon</div>
                 </div>
 
             </div>
