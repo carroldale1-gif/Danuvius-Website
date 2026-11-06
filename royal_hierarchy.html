@@ -18,7 +18,11 @@
             --shadow-gold: 0 10px 30px -10px rgba(197, 160, 89, 0.2);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             background-color: var(--bg-dark);
@@ -38,6 +42,7 @@
             letter-spacing: 1px;
         }
 
+        /* HEADER & NAVIGATION */
         header {
             border-bottom: 1px solid var(--border-gold-light);
             background: rgba(15, 23, 42, 0.9);
@@ -64,6 +69,7 @@
             color: inherit;
         }
 
+        /* HEADER CREST SIZE */
         .brand-crest {
             width: 85px;
             height: 85px;
@@ -72,7 +78,7 @@
             border: 2px solid var(--border-gold);
             background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
             box-shadow: 0 0 15px rgba(197, 160, 89, 0.25);
-            padding: 3px;
+            padding: 2px;
         }
 
         .brand-text h1 {
@@ -113,10 +119,12 @@
             border-bottom-color: var(--border-gold);
         }
 
+        /* HERO SECTION */
         .hero {
             padding: 5rem 2rem 4rem;
             text-align: center;
             position: relative;
+            background: radial-gradient(ellipse at top, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
         }
 
         .hero-title {
@@ -142,6 +150,7 @@
             margin: 2rem auto;
         }
 
+        /* MAIN CONTAINER & CARDS */
         .main-container {
             max-width: 1280px;
             margin: 0 auto;
@@ -192,6 +201,7 @@
             color: var(--text-main);
         }
 
+        /* HERALDRY FEATURE DISPLAY */
         .heraldry-display {
             display: flex;
             align-items: center;
@@ -273,7 +283,10 @@
             margin-bottom: 1rem;
         }
 
-        .info-box ul { list-style: none; padding: 0; }
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
 
         .info-box li {
             font-size: 0.9rem;
@@ -291,6 +304,7 @@
             font-size: 0.7rem;
         }
 
+        /* FOOTER */
         footer {
             margin-top: auto;
             border-top: 1px solid var(--border-gold-light);
@@ -308,14 +322,14 @@
             gap: 1.5rem;
         }
 
+        /* FOOTER CREST SIZE */
         .footer-crest {
             width: 100px;
             height: 100px;
             object-fit: contain;
             border: 1px solid var(--border-gold);
             border-radius: 50%;
-            padding: 3px;
-            background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
+            padding: 2px;
         }
 
         .footer-text {
@@ -330,10 +344,28 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                justify-content: center;
+                gap: 1rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .heraldry-display {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <!-- GLOBAL NAVIGATION HEADER -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="brand">
@@ -357,6 +389,7 @@
         </div>
     </header>
 
+    <!-- HERO HEADER -->
     <section class="hero">
         <span class="section-tag">Dynastic Lineage & Crown Prerogative</span>
         <h1 class="hero-title">Royal Hierarchy</h1>
@@ -366,10 +399,14 @@
         <div class="gold-divider"></div>
     </section>
 
+    <!-- MAIN CONTAINER -->
     <div class="main-container">
+
+        <!-- HOUSE OF ISTER FEATURE DISPLAY -->
         <section class="card">
             <div class="heraldry-display">
-                <img src="House Ister (1).jpg" alt="House of Ister Coat of Arms" class="heraldry-img">
+                <!-- House of Ister Coat of Arms image linked to clean filename -->
+                <img src="house ister (1).jpg" alt="House of Ister Coat of Arms" class="heraldry-img">
                 <div class="heraldry-content">
                     <span class="section-tag">Sovereign House</span>
                     <h3>The House of Ister</h3>
@@ -416,8 +453,10 @@
                 </div>
             </div>
         </section>
+
     </div>
 
+    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Crest" class="footer-crest">
