@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Residency & DSI Portal | Sovereign Margraviate of Danuvius</title>
+    <title>E-Residency Program | Sovereign Margraviate of Danuvius</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #0f172a;
-            --bg-card: rgba(15, 23, 42, 0.85);
+            --bg-card: rgba(15, 23, 42, 0.75);
             --border-gold: #c5a059;
             --border-gold-light: rgba(197, 160, 89, 0.3);
             --text-gold: #d4af37;
@@ -69,7 +69,6 @@
             color: inherit;
         }
 
-        /* INCREASED HEADER CREST SIZE */
         .brand-crest {
             width: 85px;
             height: 85px;
@@ -98,7 +97,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
         }
 
@@ -150,20 +149,14 @@
             margin: 2rem auto;
         }
 
-        /* MAIN CONTAINER & GRID */
+        /* MAIN CONTAINER */
         .main-container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem 5rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        @media (max-width: 968px) {
-            .main-container {
-                grid-template-columns: 1fr;
-            }
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
         }
 
         .card {
@@ -175,9 +168,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         .card::before {
@@ -192,6 +182,7 @@
 
         .section-header {
             margin-bottom: 2rem;
+            text-align: center;
         }
 
         .section-tag {
@@ -205,107 +196,181 @@
         }
 
         .section-title {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: var(--text-main);
         }
 
-        /* FORM STYLING */
-        .form-group {
-            margin-bottom: 1.5rem;
+        /* EQUALITY NOTICE BANNER */
+        .equality-banner {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid var(--border-gold);
+            border-radius: 6px;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
         }
 
-        label {
-            display: block;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-gold);
-            margin-bottom: 0.5rem;
-            font-family: 'Cinzel', serif;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 0.9rem 1rem;
-            background: rgba(10, 15, 28, 0.8);
-            border: 1px solid var(--border-gold-light);
-            border-radius: 4px;
-            color: var(--text-main);
-            font-family: 'Montserrat', sans-serif;
+        .equality-banner p {
+            color: var(--text-gold-light);
             font-size: 0.95rem;
-            transition: border-color 0.3s ease;
+            font-weight: 500;
         }
 
-        input:focus, select:focus, textarea:focus {
-            outline: none;
+        /* TIERS GRID */
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .tier-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .tier-box.featured {
             border-color: var(--border-gold);
-            box-shadow: 0 0 10px rgba(197, 160, 89, 0.2);
+            background: rgba(197, 160, 89, 0.05);
+            box-shadow: var(--shadow-gold);
         }
 
-        .btn-gold {
-            background: linear-gradient(135deg, #c5a059 0%, #9a7b38 100%);
+        .tier-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-gold);
+        }
+
+        .badge-popular {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--border-gold);
             color: #000;
             font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 1rem;
-            width: 100%;
-            border: none;
+            padding: 0.2rem 0.6rem;
             border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
-            margin-top: 1rem;
+            letter-spacing: 1px;
         }
 
-        .btn-gold:hover {
-            background: linear-gradient(135deg, #d4af37 0%, #b38f42 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
-        }
-
-        /* VERIFICATION BOX RESULTS */
-        .result-box {
-            margin-top: 1.5rem;
-            padding: 1.2rem;
-            border-radius: 6px;
-            display: none;
-            font-size: 0.9rem;
-        }
-
-        .result-valid {
-            background: rgba(40, 167, 69, 0.15);
-            border: 1px solid #28a745;
-            color: #d4edda;
-        }
-
-        .result-invalid {
-            background: rgba(220, 53, 69, 0.15);
-            border: 1px solid #dc3545;
-            color: #f8d7da;
-        }
-
-        /* SUCCESS MESSAGE */
-        #success-msg {
-            display: none;
-            background: rgba(197, 160, 89, 0.1);
-            border: 1px solid var(--border-gold);
-            padding: 1.5rem;
-            border-radius: 6px;
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-
-        #success-msg h4 {
+        .tier-title {
+            font-size: 1.4rem;
             color: var(--text-gold);
-            font-size: 1.2rem;
             margin-bottom: 0.5rem;
+            text-align: center;
         }
 
-        #success-msg p {
+        .tier-price {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
             color: var(--text-main);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .tier-price span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        .tier-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+        .tier-features li {
             font-size: 0.9rem;
+            color: var(--text-main);
+            padding: 0.6rem 0;
+            border-bottom: 1px dashed rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .tier-features li.disabled {
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        .tier-features li::before {
+            content: '✓';
+            color: var(--text-gold);
+            font-weight: bold;
+        }
+
+        .tier-features li.disabled::before {
+            content: '✕';
+            color: #ef4444;
+        }
+
+        .btn-tier {
+            width: 100%;
+            text-align: center;
+            background: transparent;
+            color: var(--text-gold);
+            border: 1px solid var(--border-gold);
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.8rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        .tier-box.featured .btn-tier, .btn-tier:hover {
+            background: linear-gradient(135deg, #c5a059 0%, #9a7b38 100%);
+            color: #000;
+            border-color: transparent;
+        }
+
+        /* VERIFIER INTERFACE */
+        .verifier-box {
+            background: rgba(10, 15, 28, 0.6);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 2.5rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .verifier-input-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .verifier-input {
+            flex: 1;
+            min-width: 240px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-gold-light);
+            border-radius: 4px;
+            padding: 0.8rem 1rem;
+            color: var(--text-main);
+            font-family: monospace;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .verifier-input:focus {
+            border-color: var(--border-gold);
         }
 
         /* FOOTER */
@@ -326,7 +391,6 @@
             gap: 1.5rem;
         }
 
-        /* INCREASED FOOTER CREST SIZE */
         .footer-crest {
             width: 100px;
             height: 100px;
@@ -361,6 +425,9 @@
             .hero-title {
                 font-size: 2rem;
             }
+            .verifier-input-group {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -370,7 +437,7 @@
     <header>
         <div class="nav-container">
             <a href="index.html" class="brand">
-                <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Sovereign Margraviate of Danuvius Crest" class="brand-crest">
+                <img src="state.crest.png" alt="Sovereign Margraviate of Danuvius Crest" class="brand-crest">
                 <div class="brand-text">
                     <h1>Sovereign Margraviate of Danuvius</h1>
                     <p>Official State Portal</p>
@@ -393,10 +460,10 @@
 
     <!-- HERO HEADER -->
     <section class="hero">
-        <span class="section-tag">Digital Sovereignty & Credential Portal</span>
-        <h1 class="hero-title">E-Residency & DSI Services</h1>
+        <span class="section-tag">Instrument XI Digital Governance Framework</span>
+        <h1 class="hero-title">E-Residency Program</h1>
         <p class="hero-subtitle">
-            Secure your government-issued digital identity, cryptographic key pair, and verify active Danubian credentials under Instrument XI.
+            Join the digital realm of Danuvius. Obtain your Digital Subject Identifier (DSI), access state cryptographic registers, and participate in our global digital ecosystem.
         </p>
         <div class="gold-divider"></div>
     </section>
@@ -404,62 +471,96 @@
     <!-- MAIN CONTAINER -->
     <div class="main-container">
 
-        <!-- LEFT COLUMN: DSI CREDENTIAL VERIFIER -->
+        <!-- E-RESIDENCY TIERS & SELECTION -->
         <section class="card">
-            <div>
-                <div class="section-header">
-                    <span class="section-tag">Cryptographic Registry</span>
-                    <h2 class="section-title">Verify DSI / E-Resident Number</h2>
-                </div>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
-                    Enter a Digital Subject Identifier (e.g., <code>DSI-2026-001</code>) to check its active standing on the sovereign digital ledger.
-                </p>
-                
-                <div class="form-group">
-                    <label for="dsiInput">Identifier Number</label>
-                    <input type="text" id="dsiInput" placeholder="Enter DSI number (e.g. DSI-2026-001)">
-                </div>
-                <button type="button" class="btn-gold" onclick="verifyDSI()">Check Status</button>
+            <div class="section-header">
+                <span class="section-tag">Registration Tiers</span>
+                <h2 class="section-title">Select Your E-Residency Tier</h2>
             </div>
 
-            <div id="verifyResult" class="result-box"></div>
+            <!-- EQUALITY PRINCIPLE BANNER -->
+            <div class="equality-banner">
+                <p>
+                    <strong>Constitutional Equality Notice:</strong> All 3 tiers grant identical legal rights, statutory privileges, and digital access under Instrument XI. Tier fees are strictly one-off contributions covering physical production, minting, and international postage of material goods.
+                </p>
+            </div>
+
+            <div class="tiers-grid">
+                
+                <!-- BASIC TIER -->
+                <div class="tier-box">
+                    <div>
+                        <h3 class="tier-title">Basic E-Residency</h3>
+                        <div class="tier-price">FREE</div>
+                        <ul class="tier-features">
+                            <li>Full Constitutional E-Residency Status</li>
+                            <li>Digital Governance Access Rights</li>
+                            <li>Consultative Council Advisory Rights</li>
+                            <li class="disabled">Verified DSI Number Supplied</li>
+                            <li class="disabled">Official Physical ID Card</li>
+                            <li class="disabled">Printed Paper Certificate</li>
+                            <li class="disabled">Physical Sovereign Danuvius Flag</li>
+                        </ul>
+                    </div>
+                    <a href="#apply" class="btn-tier">Register Basic</a>
+                </div>
+
+                <!-- STANDARD TIER -->
+                <div class="tier-box featured">
+                    <span class="badge-popular">Most Popular</span>
+                    <div>
+                        <h3 class="tier-title">Standard Tier</h3>
+                        <div class="tier-price">£20 <span>one-off</span></div>
+                        <ul class="tier-features">
+                            <li>Full Constitutional E-Residency Status</li>
+                            <li>Digital Governance Access Rights</li>
+                            <li>Consultative Council Advisory Rights</li>
+                            <li><strong>Official Verified DSI Number</strong></li>
+                            <li><strong>Portal Verification Enabled</strong></li>
+                            <li><strong>Official Physical ID Card</strong></li>
+                            <li><strong>Printed Certificate of Registry</strong></li>
+                            <li class="disabled">Physical Sovereign Danuvius Flag</li>
+                        </ul>
+                    </div>
+                    <a href="#apply" class="btn-tier">Select Standard</a>
+                </div>
+
+                <!-- PREMIUM TIER -->
+                <div class="tier-box">
+                    <div>
+                        <h3 class="tier-title">Premium Tier</h3>
+                        <div class="tier-price">£50 <span>one-off</span></div>
+                        <ul class="tier-features">
+                            <li>Full Constitutional E-Residency Status</li>
+                            <li>Digital Governance Access Rights</li>
+                            <li>Consultative Council Advisory Rights</li>
+                            <li><strong>Official Verified DSI Number</strong></li>
+                            <li><strong>Portal Verification Enabled</strong></li>
+                            <li><strong>Official Physical ID Card</strong></li>
+                            <li><strong>Printed Certificate of Registry</strong></li>
+                            <li><strong>Sovereign Danuvius Flag Included</strong></li>
+                        </ul>
+                    </div>
+                    <a href="#apply" class="btn-tier">Select Premium</a>
+                </div>
+
+            </div>
         </section>
 
-        <!-- RIGHT COLUMN: APPLICATION FORM -->
+        <!-- DSI VERIFIER PORTAL SEARCH -->
         <section class="card">
-            <div>
-                <div class="section-header">
-                    <span class="section-tag">Secure Application Portal</span>
-                    <h2 class="section-title">Request E-Residency</h2>
-                </div>
-                
-                <form id="eResidencyForm" onsubmit="handleSubmission(event)">
-                    <div class="form-group">
-                        <label for="fullName">Full Legal Name</label>
-                        <input type="text" id="fullName" required placeholder="Enter your full name">
-                    </div>
+            <div class="section-header">
+                <span class="section-tag">Cryptographic Register</span>
+                <h2 class="section-title">Official DSI Registry Verifier</h2>
+            </div>
 
-                    <div class="form-group">
-                        <label for="email">Secure Electronic Mail</label>
-                        <input type="email" id="email" required placeholder="name@domain.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="intent">Intended Purpose</label>
-                        <select id="intent" required>
-                            <option value="" disabled selected>Select primary objective</option>
-                            <option value="corporate">Corporate Incorporation (MLC / IBC)</option>
-                            <option value="digital">Digital Infrastructure & Cryptography</option>
-                            <option value="cultural">Cultural & Academic Affiliation</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn-gold">Submit Application to Chancery</button>
-                </form>
-
-                <div id="success-msg">
-                    <h4>Application Received Successfully</h4>
-                    <p>Your details have been logged for cryptographic vetting by the Margravial Chancery. A temporary tracking hash has been assigned.</p>
+            <div class="verifier-box">
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    Enter a Standard or Premium E-Resident's Digital Subject Identifier (DSI) number below to verify its authenticity against the Margravial Chancery ledger.
+                </p>
+                <div class="verifier-input-group">
+                    <input type="text" class="verifier-input" placeholder="e.g. DSI-2026-8849-DAN" id="dsiInput">
+                    <button class="btn-tier" style="width: auto; padding: 0.8rem 1.8rem;" onclick="alert('DSI Verification Ledger Online. Searching registry...')">Verify DSI</button>
                 </div>
             </div>
         </section>
@@ -469,7 +570,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-content">
-            <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Crest" class="footer-crest">
+            <img src="state.crest.png" alt="State Crest" class="footer-crest">
             <p class="footer-text">
                 Published under the Authority of the Margravial Chancery of Danuvius. All statutory rights, sovereign prerogatives, and cryptographic registers reserved under the Foundational Charter.
             </p>
@@ -478,39 +579,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Sample database of active / valid credentials for testing
-        const validDSIs = ["DSI-2026-001", "DSI-2026-042", "DANUVIUS-ROOT-01", "HSH-ALBRECHT-1"];
-
-        function verifyDSI() {
-            const inputVal = document.getElementById('dsiInput').value.trim();
-            const resultBox = document.getElementById('verifyResult');
-
-            if (!inputVal) {
-                resultBox.style.display = 'block';
-                resultBox.className = 'result-box result-invalid';
-                resultBox.innerHTML = '<strong>Error:</strong> Please enter a valid identification number to verify.';
-                return;
-            }
-
-            resultBox.style.display = 'block';
-            
-            if (validDSIs.includes(inputVal.toUpperCase())) {
-                resultBox.className = 'result-box result-valid';
-                resultBox.innerHTML = `<strong>Status: VERIFIED & ACTIVE</strong><br>Identifier <code>${inputVal}</code> is a registered and authentic credential recognized by the Margravial Chancery.`;
-            } else {
-                resultBox.className = 'result-box result-invalid';
-                resultBox.innerHTML = `<strong>Status: INVALID OR UNRECOGNISED</strong><br>Identifier <code>${inputVal}</code> does not match any active records on the sovereign digital ledger.`;
-            }
-        }
-
-        function handleSubmission(event) {
-            event.preventDefault();
-            document.getElementById('eResidencyForm').style.display = 'none';
-            document.getElementById('success-msg').style.display = 'block';
-        }
-    </script>
 
 </body>
 </html>
