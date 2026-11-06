@@ -18,11 +18,7 @@
             --shadow-gold: 0 10px 30px -10px rgba(197, 160, 89, 0.2);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-dark);
@@ -42,7 +38,6 @@
             letter-spacing: 1px;
         }
 
-        /* HEADER & NAVIGATION */
         header {
             border-bottom: 1px solid var(--border-gold-light);
             background: rgba(15, 23, 42, 0.9);
@@ -70,14 +65,14 @@
         }
 
         .brand-crest {
-            width: 48px;
-            height: 48px;
+            width: 85px;
+            height: 85px;
             object-fit: contain;
             border-radius: 50%;
             border: 2px solid var(--border-gold);
             background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
             box-shadow: 0 0 15px rgba(197, 160, 89, 0.25);
-            padding: 2px;
+            padding: 3px;
         }
 
         .brand-text h1 {
@@ -98,6 +93,7 @@
             display: flex;
             list-style: none;
             gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -117,12 +113,10 @@
             border-bottom-color: var(--border-gold);
         }
 
-        /* HERO SECTION */
         .hero {
             padding: 5rem 2rem 4rem;
             text-align: center;
             position: relative;
-            background: radial-gradient(ellipse at top, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
         }
 
         .hero-title {
@@ -148,14 +142,13 @@
             margin: 2rem auto;
         }
 
-        /* MAIN CONTAINER & CARDS */
         .main-container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem 5rem;
             display: flex;
             flex-direction: column;
-            gap: 4rem;
+            gap: 3rem;
         }
 
         .card {
@@ -196,128 +189,16 @@
         .section-title {
             font-size: 1.8rem;
             color: var(--text-main);
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .info-box {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(197, 160, 89, 0.2);
-            border-radius: 6px;
-            padding: 2rem;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .info-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-gold);
-            box-shadow: var(--shadow-gold);
-        }
-
-        .info-icon {
-            font-size: 1.5rem;
-            color: var(--text-gold);
-            margin-bottom: 1rem;
-            font-family: 'Cinzel', serif;
-            font-weight: bold;
-        }
-
-        .info-box h3 {
-            font-size: 1.3rem;
-            color: var(--text-gold-light);
             margin-bottom: 1rem;
         }
 
-        .info-box p {
+        .card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-
-        .info-box ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .info-box li {
-            font-size: 0.9rem;
-            color: var(--text-main);
-            padding: 0.4rem 0;
-            border-bottom: 1px dashed rgba(255,255,255,0.08);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .info-box li::before {
-            content: '✦';
-            color: var(--text-gold);
-            font-size: 0.7rem;
-        }
-
-        /* CONTACT FORM */
-        .form-group {
             margin-bottom: 1.5rem;
+            font-size: 1rem;
+            text-align: justify;
         }
 
-        .form-label {
-            display: block;
-            font-size: 0.85rem;
-            color: var(--text-gold-light);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.9rem 1.2rem;
-            background: rgba(15, 23, 42, 0.9);
-            border: 1px solid var(--border-gold-light);
-            border-radius: 4px;
-            color: var(--text-main);
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--border-gold);
-            box-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, #c5a059 0%, #9a7b38 100%);
-            color: #000;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
-        }
-
-        .btn-gold:hover {
-            background: linear-gradient(135deg, #d4af37 0%, #b38f42 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
-        }
-
-        /* FOOTER */
         footer {
             margin-top: auto;
             border-top: 1px solid var(--border-gold-light);
@@ -336,12 +217,13 @@
         }
 
         .footer-crest {
-            width: 60px;
-            height: 60px;
+            width: 100px;
+            height: 100px;
             object-fit: contain;
             border: 1px solid var(--border-gold);
             border-radius: 50%;
-            padding: 2px;
+            padding: 3px;
+            background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
         }
 
         .footer-text {
@@ -356,29 +238,10 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-            .hero-title {
-                font-size: 2rem;
-            }
-            .card {
-                padding: 1.8rem;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- GLOBAL NAVIGATION HEADER -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="brand">
@@ -402,171 +265,30 @@
         </div>
     </header>
 
-    <!-- HERO HEADER -->
     <section class="hero">
-        <span class="section-tag">State Architecture & Philosophy</span>
-        <h1 class="hero-title">About the Margraviate</h1>
+        <span class="section-tag">Historical & Institutional Identity</span>
+        <h1 class="hero-title">About the Realm</h1>
         <p class="hero-subtitle">
-            Explore the geographical foundations, statutory governance, sovereign identity, and digital services of the Sovereign Margraviate of Danuvius.
+            An overview of the heritage, foundational principles, and governance framework of the Sovereign Margraviate of Danuvius.
         </p>
         <div class="gold-divider"></div>
     </section>
 
-    <!-- MAIN CONTENT AREA -->
     <div class="main-container">
-
-        <!-- SECTION 1: WHERE WE ARE -->
         <section class="card">
             <div class="section-header">
-                <span class="section-tag">Territorial & Digital Domain</span>
-                <h2 class="section-title">Where We Are</h2>
+                <span class="section-tag">The Sovereign Enclaves</span>
+                <h2 class="section-title">Heritage & Continuity</h2>
             </div>
-            <div class="grid-3">
-                <div class="info-box">
-                    <div class="info-icon">I</div>
-                    <h3>Physical Enclaves</h3>
-                    <p>
-                        The Sovereign Margraviate maintains designated physical sovereign enclaves along the historic Danube (Danuvius) basin, established under solemn international law principles.
-                    </p>
-                    <ul>
-                        <li>Danubian River Basin Enclaves</li>
-                        <li>Chancery & Sovereign Property Holdings</li>
-                        <li>Protected Ceremonial Grounds</li>
-                    </ul>
-                </div>
-
-                <div class="info-box">
-                    <div class="info-icon">II</div>
-                    <h3>The Digital Domain</h3>
-                    <p>
-                        Complementing its physical footprint, Danuvius operates a borderless digital sovereign realm. State servers, registers, and legal repositories run on dedicated, cryptographically signed networks.
-                    </p>
-                    <ul>
-                        <li>Official Sovereign Network (.org / .io)</li>
-                        <li>Distributed State Ledgers</li>
-                        <li>Encrypted Chancery Servers</li>
-                    </ul>
-                </div>
-
-                <div class="info-box">
-                    <div class="info-icon">III</div>
-                    <h3>Dual-Jurisdiction Model</h3>
-                    <p>
-                        By synthesizing physical territorial presence with an unyielding digital domain, Danuvius ensures its state legal structure remains continuous, accessible, and operational worldwide 24/7.
-                    </p>
-                    <ul>
-                        <li>Global Subject Access</li>
-                        <li>Off-Territory Judicial Validity</li>
-                        <li>Immutable Civil Registers</li>
-                    </ul>
-                </div>
-            </div>
+            <p>
+                The Sovereign Margraviate of Danuvius is established upon principles of unyielding statutory rigour, historical continuity, and sovereign dignity. Under the reign of <strong>Margrave Albrecht I</strong> and the House of Ister, the Realm unites traditional constitutional governance with modern digital infrastructure.
+            </p>
+            <p>
+                Operating through a comprehensive framework of 19 enacted Statutory Instruments and the Royal Proclamation, the Realm secures its territorial enclaves, maritime waterways, public finances, and intellectual property while preserving rich cultural heritage and open administrative transparency.
+            </p>
         </section>
-
-        <!-- SECTION 2: HOW WE ARE RUN -->
-        <section class="card">
-            <div class="section-header">
-                <span class="section-tag">Constitutional & Administrative Order</span>
-                <h2 class="section-title">How We Are Run</h2>
-            </div>
-            <div class="grid-3">
-                <div class="info-box">
-                    <div class="info-icon">✦</div>
-                    <h3>Crown & Executive Chancery</h3>
-                    <p>
-                        Head of State leadership is exercised by <strong>Margrave Albrecht I</strong>, Head of the House of Ister. Executive governance is administered via the Margravial Chancery, managing foreign affairs, seals, and civic order.
-                    </p>
-                </div>
-
-                <div class="info-box">
-                    <div class="info-icon">✦</div>
-                    <h3>Statutory Corpus (19 Instruments)</h3>
-                    <p>
-                        Governmental authority is strictly bound by codified legal statutes (Instruments I through XIX). Danuvius operates under complete statutory rigour, leaving no room for arbitrary decree.
-                    </p>
-                </div>
-
-                <div class="info-box">
-                    <div class="info-icon">✦</div>
-                    <h3>Judicial & Administrative Oversight</h3>
-                    <p>
-                        Magistrates and public officers oversee civil compliance, business registries, legal disputes, and arbitral rulings under Instrument VII (Judicial & Arbitral Framework).
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 3: WHAT WE OFFER -->
-        <section class="card">
-            <div class="section-header">
-                <span class="section-tag">Subject & Resident Services</span>
-                <h2 class="section-title">What We Offer</h2>
-            </div>
-            <div class="grid-3">
-                <div class="info-box">
-                    <div class="info-icon">01</div>
-                    <h3>Digital Subject Identifier (DSI)</h3>
-                    <p>
-                        State-backed cryptographic identity for subjects and e-residents (Instrument XI), allowing verified digital signatures and secure interactions across the realm.
-                    </p>
-                </div>
-
-                <div class="info-box">
-                    <div class="info-icon">02</div>
-                    <h3>E-Residency & Global Business</h3>
-                    <p>
-                        Prospective global citizens and entrepreneurs can register digital entities, access state legal protections, and manage international business contracts.
-                    </p>
-                </div>
-
-                <div class="info-box">
-                    <div class="info-icon">03</div>
-                    <h3>Chivalric Honors & Verification</h3>
-                    <p>
-                        Official verification of state patents, noble titles, and chivalric awards issued under the Crown's <em>fons honorum</em>, accessible via online public registries.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: CHANCERY INQUIRY PORTAL -->
-        <section class="card">
-            <div class="section-header">
-                <span class="section-tag">Official Communication</span>
-                <h2 class="section-title">Contact the Margravial Chancery</h2>
-            </div>
-            <form id="chanceryForm" onsubmit="event.preventDefault(); alert('Inquiry transmitted to the Margravial Chancery.');">
-                <div class="grid-3" style="margin-bottom: 0;">
-                    <div class="form-group">
-                        <label class="form-label">Full Name / Official Title</label>
-                        <input type="text" class="form-control" placeholder="e.g. Lord Alexander Vane" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Email / Contact Address</label>
-                        <input type="email" class="form-control" placeholder="e.g. alexander@domain.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Nature of Inquiry</label>
-                        <select class="form-control" required>
-                            <option value="">Select Category...</option>
-                            <option value="eresidency">E-Residency Application</option>
-                            <option value="dsi">DSI Verification Support</option>
-                            <option value="legal">Statutory / Legal Query</option>
-                            <option value="diplomatic">Diplomatic / Press Relations</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group" style="margin-top: 1.5rem;">
-                    <label class="form-label">Message / Official Statement</label>
-                    <textarea class="form-control" placeholder="Enter details of your inquiry..." required></textarea>
-                </div>
-                <button type="submit" class="btn-gold">Transmit to Chancery</button>
-            </form>
-        </section>
-
     </div>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Crest" class="footer-crest">
