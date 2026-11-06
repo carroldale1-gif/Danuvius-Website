@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Margraviate of Danuvius | Official State Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --border-gold: #c5a059;
+            --border-gold-light: rgba(197, 160, 89, 0.3);
+            --text-gold: #d4af37;
+            --text-gold-light: #e6ca65;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --shadow-gold: 0 10px 30px -10px rgba(197, 160, 89, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(197, 160, 89, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 100% 100%, rgba(15, 23, 42, 0.8) 0%, transparent 50%);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3, h4, .brand-title {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            border-bottom: 1px solid var(--border-gold-light);
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-seal {
+            width: 48px;
+            height: 48px;
+            border: 2px solid var(--border-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle, rgba(197,160,89,0.2) 0%, transparent 70%);
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
+            font-family: 'Cinzel', serif;
+            font-weight: 900;
+            color: var(--text-gold);
+        }
+
+        .brand-text h1 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-gold);
+            text-transform: uppercase;
+        }
+
+        .brand-text p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            padding: 0.4rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-gold);
+            border-bottom-color: var(--border-gold);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(ellipse at top, rgba(197, 160, 89, 0.18) 0%, transparent 70%);
+        }
+
+        .hero-tag {
+            font-size: 0.85rem;
+            color: var(--text-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            color: var(--text-gold);
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 25px rgba(197, 160, 89, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #c5a059 0%, #9a7b38 100%);
+            color: #000;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.9rem 2.2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+            display: inline-block;
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #b38f42 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-gold);
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.9rem 2.2rem;
+            border: 1px solid var(--border-gold);
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: rgba(197, 160, 89, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .gold-divider {
+            height: 2px;
+            width: 140px;
+            background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+            margin: 3rem auto;
+        }
+
+        /* MAIN CONTENT CONTAINER */
+        .main-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold-light);
+            border-radius: 8px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .section-tag {
+            font-size: 0.8rem;
+            color: var(--text-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Cinzel', serif;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--text-main);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 6px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-gold);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--text-gold);
+            margin-bottom: 1rem;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+        }
+
+        .info-box h3 {
+            font-size: 1.3rem;
+            color: var(--text-gold-light);
+            margin-bottom: 1rem;
+        }
+
+        .info-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .link-arrow {
+            color: var(--text-gold);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.2s ease;
+        }
+
+        .link-arrow:hover {
+            gap: 0.8rem;
+        }
+
+        /* LIVE DSI SIMULATOR WIDGET */
+        .dsi-widget {
+            background: rgba(10, 15, 28, 0.9);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 2.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 0 30px rgba(197, 160, 89, 0.15);
+        }
+
+        .dsi-input-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .dsi-input {
+            flex: 1;
+            padding: 0.9rem 1.2rem;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid var(--border-gold-light);
+            border-radius: 4px;
+            color: var(--text-main);
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .dsi-input:focus {
+            outline: none;
+            border-color: var(--border-gold);
+        }
+
+        #dsiResult {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .status-valid {
+            background: rgba(46, 204, 113, 0.15);
+            border: 1px solid #2ecc71;
+            color: #2ecc71;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border-gold-light);
+            background: rgba(10, 15, 28, 0.95);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-seal {
+            width: 60px;
+            height: 60px;
+            border: 1px solid var(--border-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gold);
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            max-width: 600px;
+        }
+
+        .footer-copy {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .dsi-input-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- GLOBAL NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <div class="brand-seal">SMD</div>
+                <div class="brand-text">
+                    <h1>Sovereign Margraviate of Danuvius</h1>
+                    <p>Official State Portal</p>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="royal_hierarchy.html">Royal Hierarchy</a></li>
+                    <li><a href="state_hierarchy.html">State Hierarchy</a></li>
+                    <li><a href="archive.html">Archive</a></li>
+                    <li><a href="proclamation.html">Proclamation</a></li>
+                    <li><a href="e_residency.html">E-Residency</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <span class="hero-tag">House of Ister • Reign of Margrave Albrecht I</span>
+        <h1 class="hero-title">Sovereign Margraviate of Danuvius</h1>
+        <p class="hero-subtitle">
+            A sovereign micro-jurisdiction bridging riverine territorial enclaves with advanced cryptographic state infrastructure under 19 foundational statutory instruments.
+        </p>
+        <div class="hero-actions">
+            <a href="e_residency.html" class="btn-gold">Apply for E-Residency</a>
+            <a href="about.html" class="btn-outline">Explore State Pillars</a>
+        </div>
+        <div class="gold-divider"></div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-container">
+
+        <!-- PILLARS GRID -->
+        <section class="card">
+            <div class="section-header">
+                <span class="section-tag">Foundations of Statehood</span>
+                <h2 class="section-title">Pillars of the Realm</h2>
+            </div>
+            <div class="grid-3">
+                <div class="info-box">
+                    <div class="info-icon">I</div>
+                    <h3>Sovereign Heritage</h3>
+                    <p>
+                        Ruled under the constitutional authority of the House of Ister and Margrave Albrecht I, uniting historical tradition with modern statecraft.
+                    </p>
+                    <a href="royal_hierarchy.html" class="link-arrow">View Royal Hierarchy →</a>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">II</div>
+                    <h3>Statutory Rigour</h3>
+                    <p>
+                        Governed by 19 codified Statutory Instruments ensuring absolute legal transparency, civil rights, and unyielding institutional order.
+                    </p>
+                    <a href="archive.html" class="link-arrow">Read
