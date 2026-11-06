@@ -18,11 +18,7 @@
             --shadow-gold: 0 10px 30px -10px rgba(197, 160, 89, 0.2);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-dark);
@@ -42,7 +38,6 @@
             letter-spacing: 1px;
         }
 
-        /* HEADER & NAVIGATION */
         header {
             border-bottom: 1px solid var(--border-gold-light);
             background: rgba(15, 23, 42, 0.9);
@@ -70,14 +65,14 @@
         }
 
         .brand-crest {
-            width: 48px;
-            height: 48px;
+            width: 85px;
+            height: 85px;
             object-fit: contain;
             border-radius: 50%;
             border: 2px solid var(--border-gold);
             background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
             box-shadow: 0 0 15px rgba(197, 160, 89, 0.25);
-            padding: 2px;
+            padding: 3px;
         }
 
         .brand-text h1 {
@@ -118,12 +113,10 @@
             border-bottom-color: var(--border-gold);
         }
 
-        /* HERO SECTION */
         .hero {
             padding: 5rem 2rem 4rem;
             text-align: center;
             position: relative;
-            background: radial-gradient(ellipse at top, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
         }
 
         .hero-title {
@@ -149,7 +142,6 @@
             margin: 2rem auto;
         }
 
-        /* MAIN CONTAINER & CARDS */
         .main-container {
             max-width: 1280px;
             margin: 0 auto;
@@ -200,7 +192,6 @@
             color: var(--text-main);
         }
 
-        /* HERALDRY FEATURE DISPLAY */
         .heraldry-display {
             display: flex;
             align-items: center;
@@ -249,3 +240,195 @@
         }
 
         .info-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 6px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-gold);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--text-gold);
+            margin-bottom: 1rem;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+        }
+
+        .info-box h3 {
+            font-size: 1.3rem;
+            color: var(--text-gold-light);
+            margin-bottom: 1rem;
+        }
+
+        .info-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-box ul { list-style: none; padding: 0; }
+
+        .info-box li {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            padding: 0.4rem 0;
+            border-bottom: 1px dashed rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box li::before {
+            content: '✦';
+            color: var(--text-gold);
+            font-size: 0.7rem;
+        }
+
+        footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border-gold-light);
+            background: rgba(10, 15, 28, 0.95);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-crest {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border: 1px solid var(--border-gold);
+            border-radius: 50%;
+            padding: 3px;
+            background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            max-width: 600px;
+        }
+
+        .footer-copy {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Sovereign Margraviate of Danuvius Crest" class="brand-crest">
+                <div class="brand-text">
+                    <h1>Sovereign Margraviate of Danuvius</h1>
+                    <p>Official State Portal</p>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="royal_hierarchy.html" class="active">Royal Hierarchy</a></li>
+                    <li><a href="state_hierarchy.html">State Hierarchy</a></li>
+                    <li><a href="archive.html">Archive</a></li>
+                    <li><a href="proclamation.html">Proclamation</a></li>
+                    <li><a href="e_residency.html">E-Residency</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <span class="section-tag">Dynastic Lineage & Crown Prerogative</span>
+        <h1 class="hero-title">Royal Hierarchy</h1>
+        <p class="hero-subtitle">
+            The sovereign ruler, dynastic succession laws, and royal privileges of the House of Ister.
+        </p>
+        <div class="gold-divider"></div>
+    </section>
+
+    <div class="main-container">
+        <section class="card">
+            <div class="heraldry-display">
+                <img src="House Ister (1).jpg" alt="House of Ister Coat of Arms" class="heraldry-img">
+                <div class="heraldry-content">
+                    <span class="section-tag">Sovereign House</span>
+                    <h3>The House of Ister</h3>
+                    <p>
+                        The ruling house of the Sovereign Margraviate of Danuvius. Under the motto <em>"Domus Stat Flumen"</em>, the House of Ister embodies historical continuity, unyielding sovereignty, and the guardian stewardship of the Danubian Enclaves.
+                    </p>
+                    <ul>
+                        <li>Fountain of Honour (Fons Honorum)</li>
+                        <li>Sole Custodian of the Crown and Great Seal</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <span class="section-tag">Monarch & Reign</span>
+                <h2 class="section-title">His Serene Highness Margrave Albrecht I</h2>
+            </div>
+
+            <div class="grid-2">
+                <div class="info-box">
+                    <div class="info-icon">I</div>
+                    <h3>The Reigning Sovereign</h3>
+                    <p>
+                        <strong>HSH Margrave Albrecht I</strong> serves as Sovereign of Danuvius and Head of the House of Ister. Exercising supreme executive authority, command over civil administration, and the power of Royal Assent under the Foundational Charter.
+                    </p>
+                    <ul>
+                        <li>Sole Fount of Honour & Chivalric Orders</li>
+                        <li>Supreme Command of State Administration</li>
+                        <li>Ratifier of all Statutory Instruments</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">II</div>
+                    <h3>Dynastic Succession & Primogeniture</h3>
+                    <p>
+                        Established under <strong>Instrument III (The Margravial Succession Act)</strong>. Succession to the Margravial Throne passes by hereditary descent through the legitimate bloodline of the House of Ister strictly governed by Absolute Primogeniture.
+                    </p>
+                    <ul>
+                        <li>Absolute Primogeniture (Succession regardless of sex)</li>
+                        <li>Formal Confirmation and Oath of the Heir Apparent</li>
+                        <li>Regency protocols for minority or infirmity</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Crest" class="footer-crest">
+            <p class="footer-text">
+                Published under the Authority of the Margravial Chancery of Danuvius. All statutory rights, sovereign prerogatives, and cryptographic registers reserved under the Foundational Charter.
+            </p>
+            <div class="footer-copy">
+                &copy; 2026 Sovereign Margraviate of Danuvius • House of Ister
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
