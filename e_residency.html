@@ -318,11 +318,11 @@
         .btn-tier {
             width: 100%;
             text-align: center;
-            background: transparent;
-            color: var(--text-gold);
-            border: 1px solid var(--border-gold);
+            background: linear-gradient(135deg, #c5a059 0%, #9a7b38 100%);
+            color: #000;
+            border: 1px solid transparent;
             font-family: 'Cinzel', serif;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             padding: 0.8rem 1rem;
             border-radius: 4px;
@@ -330,12 +330,31 @@
             transition: all 0.3s ease;
             letter-spacing: 1px;
             font-size: 0.85rem;
+            display: inline-block;
+            cursor: pointer;
         }
 
-        .tier-box.featured .btn-tier, .btn-tier:hover {
-            background: linear-gradient(135deg, #c5a059 0%, #9a7b38 100%);
-            color: #000;
-            border-color: transparent;
+        .btn-tier:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #b38f42 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        .btn-disabled {
+            width: 100%;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.8rem 1rem;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            cursor: not-allowed;
+            display: inline-block;
         }
 
         /* VERIFIER INTERFACE */
@@ -496,18 +515,18 @@
                             <li>Full Constitutional E-Residency Status</li>
                             <li>Digital Governance Access Rights</li>
                             <li>Consultative Council Advisory Rights</li>
+                            <li><strong>Digital Certificate of Registry</strong></li>
                             <li class="disabled">Verified DSI Number Supplied</li>
                             <li class="disabled">Official Physical ID Card</li>
-                            <li class="disabled">Printed Paper Certificate</li>
                             <li class="disabled">Physical Sovereign Danuvius Flag</li>
                         </ul>
                     </div>
-                    <a href="#apply" class="btn-tier">Register Basic</a>
+                    <a href="#apply" class="btn-tier">Apply Now</a>
                 </div>
 
                 <!-- STANDARD TIER -->
                 <div class="tier-box featured">
-                    <span class="badge-popular">Most Popular</span>
+                    <span class="badge-popular">Standard Tier</span>
                     <div>
                         <h3 class="tier-title">Standard Tier</h3>
                         <div class="tier-price">£20 <span>one-off</span></div>
@@ -515,14 +534,15 @@
                             <li>Full Constitutional E-Residency Status</li>
                             <li>Digital Governance Access Rights</li>
                             <li>Consultative Council Advisory Rights</li>
+                            <li>Digital Certificate of Registry</li>
                             <li><strong>Official Verified DSI Number</strong></li>
                             <li><strong>Portal Verification Enabled</strong></li>
                             <li><strong>Official Physical ID Card</strong></li>
-                            <li><strong>Printed Certificate of Registry</strong></li>
+                            <li class="disabled">Printed Physical Certificate</li>
                             <li class="disabled">Physical Sovereign Danuvius Flag</li>
                         </ul>
                     </div>
-                    <a href="#apply" class="btn-tier">Select Standard</a>
+                    <div class="btn-disabled">Coming Soon</div>
                 </div>
 
                 <!-- PREMIUM TIER -->
@@ -534,6 +554,7 @@
                             <li>Full Constitutional E-Residency Status</li>
                             <li>Digital Governance Access Rights</li>
                             <li>Consultative Council Advisory Rights</li>
+                            <li>Digital Certificate of Registry</li>
                             <li><strong>Official Verified DSI Number</strong></li>
                             <li><strong>Portal Verification Enabled</strong></li>
                             <li><strong>Official Physical ID Card</strong></li>
@@ -541,7 +562,7 @@
                             <li><strong>Sovereign Danuvius Flag Included</strong></li>
                         </ul>
                     </div>
-                    <a href="#apply" class="btn-tier">Select Premium</a>
+                    <div class="btn-disabled">Coming Soon</div>
                 </div>
 
             </div>
