@@ -69,9 +69,10 @@
             color: inherit;
         }
 
+        /* INCREASED HEADER CREST SIZE */
         .brand-crest {
-            width: 48px;
-            height: 48px;
+            width: 85px;
+            height: 85px;
             object-fit: contain;
             border-radius: 50%;
             border: 2px solid var(--border-gold);
@@ -98,6 +99,7 @@
             display: flex;
             list-style: none;
             gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -324,9 +326,10 @@
             gap: 1.5rem;
         }
 
+        /* INCREASED FOOTER CREST SIZE */
         .footer-crest {
-            width: 60px;
-            height: 60px;
+            width: 100px;
+            height: 100px;
             object-fit: contain;
             border: 1px solid var(--border-gold);
             border-radius: 50%;
@@ -345,8 +348,168 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                justify-content: center;
+                gap: 1rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- GLOBAL NAVIGATION
+    <!-- GLOBAL NAVIGATION HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Sovereign Margraviate of Danuvius Crest" class="brand-crest">
+                <div class="brand-text">
+                    <h1>Sovereign Margraviate of Danuvius</h1>
+                    <p>Official State Portal</p>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="royal_hierarchy.html">Royal Hierarchy</a></li>
+                    <li><a href="state_hierarchy.html">State Hierarchy</a></li>
+                    <li><a href="archive.html">Archive</a></li>
+                    <li><a href="proclamation.html">Proclamation</a></li>
+                    <li><a href="e_residency.html" class="active">E-Residency</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO HEADER -->
+    <section class="hero">
+        <span class="section-tag">Digital Sovereignty & Credential Portal</span>
+        <h1 class="hero-title">E-Residency & DSI Services</h1>
+        <p class="hero-subtitle">
+            Secure your government-issued digital identity, cryptographic key pair, and verify active Danubian credentials under Instrument XI.
+        </p>
+        <div class="gold-divider"></div>
+    </section>
+
+    <!-- MAIN CONTAINER -->
+    <div class="main-container">
+
+        <!-- LEFT COLUMN: DSI CREDENTIAL VERIFIER -->
+        <section class="card">
+            <div>
+                <div class="section-header">
+                    <span class="section-tag">Cryptographic Registry</span>
+                    <h2 class="section-title">Verify DSI / E-Resident Number</h2>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    Enter a Digital Subject Identifier (e.g., <code>DSI-2026-001</code>) to check its active standing on the sovereign digital ledger.
+                </p>
+                
+                <div class="form-group">
+                    <label for="dsiInput">Identifier Number</label>
+                    <input type="text" id="dsiInput" placeholder="Enter DSI number (e.g. DSI-2026-001)">
+                </div>
+                <button type="button" class="btn-gold" onclick="verifyDSI()">Check Status</button>
+            </div>
+
+            <div id="verifyResult" class="result-box"></div>
+        </section>
+
+        <!-- RIGHT COLUMN: APPLICATION FORM -->
+        <section class="card">
+            <div>
+                <div class="section-header">
+                    <span class="section-tag">Secure Application Portal</span>
+                    <h2 class="section-title">Request E-Residency</h2>
+                </div>
+                
+                <form id="eResidencyForm" onsubmit="handleSubmission(event)">
+                    <div class="form-group">
+                        <label for="fullName">Full Legal Name</label>
+                        <input type="text" id="fullName" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Secure Electronic Mail</label>
+                        <input type="email" id="email" required placeholder="name@domain.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="intent">Intended Purpose</label>
+                        <select id="intent" required>
+                            <option value="" disabled selected>Select primary objective</option>
+                            <option value="corporate">Corporate Incorporation (MLC / IBC)</option>
+                            <option value="digital">Digital Infrastructure & Cryptography</option>
+                            <option value="cultural">Cultural & Academic Affiliation</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-gold">Submit Application to Chancery</button>
+                </form>
+
+                <div id="success-msg">
+                    <h4>Application Received Successfully</h4>
+                    <p>Your details have been logged for cryptographic vetting by the Margravial Chancery. A temporary tracking hash has been assigned.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Crest" class="footer-crest">
+            <p class="footer-text">
+                Published under the Authority of the Margravial Chancery of Danuvius. All statutory rights, sovereign prerogatives, and cryptographic registers reserved under the Foundational Charter.
+            </p>
+            <div class="footer-copy">
+                &copy; 2026 Sovereign Margraviate of Danuvius • House of Ister
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample database of active / valid credentials for testing
+        const validDSIs = ["DSI-2026-001", "DSI-2026-042", "DANUVIUS-ROOT-01", "HSH-ALBRECHT-1"];
+
+        function verifyDSI() {
+            const inputVal = document.getElementById('dsiInput').value.trim();
+            const resultBox = document.getElementById('verifyResult');
+
+            if (!inputVal) {
+                resultBox.style.display = 'block';
+                resultBox.className = 'result-box result-invalid';
+                resultBox.innerHTML = '<strong>Error:</strong> Please enter a valid identification number to verify.';
+                return;
+            }
+
+            resultBox.style.display = 'block';
+            
+            if (validDSIs.includes(inputVal.toUpperCase())) {
+                resultBox.className = 'result-box result-valid';
+                resultBox.innerHTML = `<strong>Status: VERIFIED & ACTIVE</strong><br>Identifier <code>${inputVal}</code> is a registered and authentic credential recognized by the Margravial Chancery.`;
+            } else {
+                resultBox.className = 'result-box result-invalid';
+                resultBox.innerHTML = `<strong>Status: INVALID OR UNRECOGNISED</strong><br>Identifier <code>${inputVal}</code> does not match any active records on the sovereign digital ledger.`;
+            }
+        }
+
+        function handleSubmission(event) {
+            event.preventDefault();
+            document.getElementById('eResidencyForm').style.display = 'none';
+            document.getElementById('success-msg').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
