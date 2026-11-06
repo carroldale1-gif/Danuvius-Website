@@ -6,104 +6,179 @@
     <title>E-Residency Application | Margraviate of Danuvius</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
             line-height: 1.6;
-            background-color: #f4f6f9;
-            color: #333;
+            background-color: #0b1d3a;
+            color: #222222;
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
         }
         .container {
-            max-width: 650px;
-            margin: 40px auto;
+            max-width: 680px;
+            margin: 0 auto;
             background: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-top: 5px solid #003366;
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            border-top: 6px solid #d4af37;
+            border-bottom: 6px solid #d4af37;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
         h1 {
-            color: #003366;
-            margin-top: 0;
-            text-align: center;
+            color: #0b1d3a;
+            margin: 0 0 10px 0;
+            font-size: 2em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         p.subtitle {
-            text-align: center;
-            color: #666;
+            color: #d4af37;
+            font-family: Arial, sans-serif;
             font-size: 0.95em;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .notice-box {
+            background-color: #fff9e6;
+            border: 1px solid #e6c656;
+            border-left: 4px solid #d4af37;
+            padding: 15px 20px;
             margin-bottom: 25px;
+            font-family: Arial, sans-serif;
+            font-size: 0.88em;
+            color: #4a3c00;
+            line-height: 1.5;
+        }
+        .notice-box strong {
+            color: #0b1d3a;
+            display: block;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
         }
         label {
             display: block;
             font-weight: bold;
             margin-bottom: 6px;
+            color: #0b1d3a;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         input[type="text"],
         input[type="email"],
         input[type="number"],
         select {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
             box-sizing: border-box;
             font-size: 1em;
+            font-family: Arial, sans-serif;
+            background-color: #fcfcfc;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #d4af37;
+            outline: none;
+            background-color: #ffffff;
         }
         .declaration-box {
-            background-color: #f9f9fb;
-            border: 1px solid #e0e0e0;
-            border-left: 4px solid #003366;
-            padding: 15px;
-            margin: 25px 0 15px 0;
-            border-radius: 4px;
+            background-color: #f4f6f9;
+            border: 1px solid #dcdcdc;
+            border-left: 4px solid #0b1d3a;
+            padding: 20px;
+            margin: 30px 0 20px 0;
+            font-family: Arial, sans-serif;
+        }
+        .declaration-box label.heading {
+            color: #0b1d3a;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+        .declaration-text {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            color: #333333;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            line-height: 1.5;
         }
         .checkbox-group {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 12px;
         }
         .checkbox-group input {
-            margin-top: 4px;
+            margin-top: 3px;
+            transform: scale(1.2);
         }
         button {
             width: 100%;
-            background-color: #003366;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1.1em;
+            background-color: #0b1d3a;
+            color: #d4af37;
+            padding: 15px;
+            border: 1px solid #d4af37;
+            border-radius: 3px;
+            font-size: 1.05em;
             font-weight: bold;
+            font-family: Arial, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             cursor: pointer;
-            transition: background-color 0.2s ease;
+            transition: all 0.2s ease;
         }
         button:hover {
-            background-color: #002244;
+            background-color: #142a4f;
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .nav-link {
             display: block;
             text-align: center;
-            margin-top: 20px;
-            color: #003366;
+            margin-top: 25px;
+            color: #0b1d3a;
             text-decoration: none;
-            font-size: 0.9em;
+            font-family: Arial, sans-serif;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .nav-link:hover {
-            text-decoration: underline;
+            color: #d4af37;
         }
     </style>
 </head>
 <body>
 
 <div class="container" id="apply">
-    <h1>Application for Free Basic E-Residency</h1>
-    <p class="subtitle">Sovereign Margraviate of Danuvius — Official Registry</p>
+    <div class="header">
+        <h1>Application for E-Residency</h1>
+        <p class="subtitle">Sovereign Margraviate of Danuvius — Official Registry</p>
+    </div>
 
-    <!-- Form processing powered by FormSubmit sending directly to registry@margraviate-danuvius.org -->
+    <!-- Official Rights & Scope Disclaimer -->
+    <div class="notice-box">
+        <strong>Official Notice on E-Residency Rights</strong>
+        E-Residency is a digital identity status for interaction with the Margraviate's online administration. E-Residency does not grant physical entry, right of abode, diplomatic protection, or legal territorial claims; all such rights are strictly reserved for full Citizens of Danuvius.
+    </div>
+
+    <!-- Form processing sending directly to registry@margraviate-danuvius.org -->
     <form action="https://formsubmit.co/registry@margraviate-danuvius.org" method="POST">
         
         <!-- Redirect back to homepage after submission -->
@@ -124,7 +199,7 @@
 
         <div class="form-group">
             <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" name="Full Name" placeholder="e.g. John Doe" required>
+            <input type="text" id="fullname" name="Full Name" placeholder="Full legal or given name" required>
         </div>
 
         <div class="form-group">
@@ -134,23 +209,23 @@
 
         <div class="form-group">
             <label for="country">Country of Residence</label>
-            <input type="text" id="country" name="Country of Residence" placeholder="e.g. United Kingdom" required>
+            <input type="text" id="country" name="Country of Residence" placeholder="Current country of residence" required>
         </div>
 
         <div class="form-group">
             <label for="age">Age</label>
-            <input type="number" id="age" name="Age" min="18" max="120" placeholder="Must be 18 or older" required>
+            <input type="number" id="age" name="Age" min="1" max="120" placeholder="Enter age" required>
         </div>
 
         <div class="declaration-box">
-            <label>Declaration of Allegiance</label>
-            <p style="font-size: 0.9em; color: #444; margin-bottom: 10px;">
+            <label class="heading">Declaration of Allegiance</label>
+            <p class="declaration-text">
                 "I hereby swear allegiance to the Margrave and pledge to uphold the principles and laws set forth in the Foundational Charter of the Margraviate of Danuvius."
             </p>
             <div class="checkbox-group">
                 <input type="checkbox" id="declaration" name="Declaration Accepted" value="Yes" required>
-                <label for="declaration" style="font-weight: normal; font-size: 0.9em;">
-                    I solemnly declare and swear to the Margrave and the Foundational Charter.
+                <label for="declaration" style="font-weight: normal; text-transform: none; font-size: 0.9em; letter-spacing: normal;">
+                    I solemnly declare and swear allegiance to the Margrave and the Foundational Charter.
                 </label>
             </div>
         </div>
