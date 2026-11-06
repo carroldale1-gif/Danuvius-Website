@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Residency Application | Margraviate of Danuvius</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 650px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid #003366;
+        }
+        h1 {
+            color: #003366;
+            margin-top: 0;
+            text-align: center;
+        }
+        p.subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        .declaration-box {
+            background-color: #f9f9fb;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #003366;
+            padding: 15px;
+            margin: 25px 0 15px 0;
+            border-radius: 4px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .checkbox-group input {
+            margin-top: 4px;
+        }
+        button {
+            width: 100%;
+            background-color: #003366;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        button:hover {
+            background-color: #002244;
+        }
+        .nav-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #003366;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="apply">
+    <h1>Application for Free Basic E-Residency</h1>
+    <p class="subtitle">Sovereign Margraviate of Danuvius — Official Registry</p>
+
+    <!-- Form processing powered by FormSubmit sending directly to registry@margraviate-danuvius.org -->
+    <form action="https://formsubmit.co/registry@margraviate-danuvius.org" method="POST">
+        
+        <!-- Redirect back to homepage after submission -->
+        <input type="hidden" name="_next" value="https://margraviate-danuvius.org/index.html">
+        <input type="hidden" name="_subject" value="New E-Residency Application Received">
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <select id="title" name="Title" required>
+                <option value="" disabled selected>Select your title</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Ms.">Ms.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Dr.">Dr.</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="Full Name" placeholder="e.g. John Doe" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="Email Address" placeholder="name@example.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country of Residence</label>
+            <input type="text" id="country" name="Country of Residence" placeholder="e.g. United Kingdom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="Age" min="18" max="120" placeholder="Must be 18 or older" required>
+        </div>
+
+        <div class="declaration-box">
+            <label>Declaration of Allegiance</label>
+            <p style="font-size: 0.9em; color: #444; margin-bottom: 10px;">
+                "I hereby swear allegiance to the Margrave and pledge to uphold the principles and laws set forth in the Foundational Charter of the Margraviate of Danuvius."
+            </p>
+            <div class="checkbox-group">
+                <input type="checkbox" id="declaration" name="Declaration Accepted" value="Yes" required>
+                <label for="declaration" style="font-weight: normal; font-size: 0.9em;">
+                    I solemnly declare and swear to the Margrave and the Foundational Charter.
+                </label>
+            </div>
+        </div>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <a href="index.html" class="nav-link">&larr; Return to Main Portal</a>
+</div>
+
+</body>
+</html>
