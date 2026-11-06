@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legislative Archive | Sovereign Margraviate of Danuvius</title>
+    <title>State Hierarchy | Sovereign Margraviate of Danuvius</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -18,11 +18,7 @@
             --shadow-gold: 0 10px 30px -10px rgba(197, 160, 89, 0.2);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-dark);
@@ -42,7 +38,6 @@
             letter-spacing: 1px;
         }
 
-        /* HEADER & NAVIGATION */
         header {
             border-bottom: 1px solid var(--border-gold-light);
             background: rgba(15, 23, 42, 0.9);
@@ -70,14 +65,14 @@
         }
 
         .brand-crest {
-            width: 48px;
-            height: 48px;
+            width: 85px;
+            height: 85px;
             object-fit: contain;
             border-radius: 50%;
             border: 2px solid var(--border-gold);
             background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
             box-shadow: 0 0 15px rgba(197, 160, 89, 0.25);
-            padding: 2px;
+            padding: 3px;
         }
 
         .brand-text h1 {
@@ -98,6 +93,7 @@
             display: flex;
             list-style: none;
             gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -117,12 +113,10 @@
             border-bottom-color: var(--border-gold);
         }
 
-        /* HERO SECTION */
         .hero {
             padding: 5rem 2rem 4rem;
             text-align: center;
             position: relative;
-            background: radial-gradient(ellipse at top, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
         }
 
         .hero-title {
@@ -148,21 +142,20 @@
             margin: 2rem auto;
         }
 
-        /* MAIN CONTAINER & TABLE */
         .main-container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem 5rem;
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 4rem;
         }
 
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-gold-light);
             border-radius: 8px;
-            padding: 2.5rem;
+            padding: 3rem;
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             position: relative;
@@ -181,6 +174,7 @@
 
         .section-header {
             margin-bottom: 2rem;
+            text-align: center;
         }
 
         .section-tag {
@@ -198,64 +192,105 @@
             color: var(--text-main);
         }
 
-        .table-responsive {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.9rem;
-        }
-
-        th, td {
-            padding: 1rem 1.2rem;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
-        }
-
-        th {
-            font-family: 'Cinzel', serif;
-            color: var(--text-gold);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            background: rgba(15, 23, 42, 0.8);
-        }
-
-        tr:hover td {
-            background: rgba(197, 160, 89, 0.03);
-        }
-
-        td code {
-            font-family: monospace;
-            color: var(--text-gold-light);
-            background: rgba(0,0,0,0.3);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-
-        .btn-download {
-            background: transparent;
-            color: var(--text-gold);
+        .heraldry-display {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            background: rgba(10, 15, 28, 0.6);
             border: 1px solid var(--border-gold);
-            padding: 0.4rem 0.9rem;
-            border-radius: 4px;
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .heraldry-img {
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 2px solid var(--border-gold);
+            background: #000;
+            box-shadow: 0 0 25px rgba(197, 160, 89, 0.2);
+            padding: 5px;
+        }
+
+        .heraldry-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .heraldry-content h3 {
+            color: var(--text-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .heraldry-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 6px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-gold);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--text-gold);
+            margin-bottom: 1rem;
             font-family: 'Cinzel', serif;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            display: inline-block;
+            font-weight: bold;
         }
 
-        .btn-download:hover {
-            background: var(--border-gold);
-            color: #000;
+        .info-box h3 {
+            font-size: 1.3rem;
+            color: var(--text-gold-light);
+            margin-bottom: 1rem;
         }
 
-        /* FOOTER */
+        .info-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-box ul { list-style: none; padding: 0; }
+
+        .info-box li {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            padding: 0.4rem 0;
+            border-bottom: 1px dashed rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box li::before {
+            content: '✦';
+            color: var(--text-gold);
+            font-size: 0.7rem;
+        }
+
         footer {
             margin-top: auto;
             border-top: 1px solid var(--border-gold-light);
@@ -274,12 +309,13 @@
         }
 
         .footer-crest {
-            width: 60px;
-            height: 60px;
+            width: 100px;
+            height: 100px;
             object-fit: contain;
             border: 1px solid var(--border-gold);
             border-radius: 50%;
-            padding: 2px;
+            padding: 3px;
+            background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
         }
 
         .footer-text {
@@ -294,26 +330,10 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-            .hero-title {
-                font-size: 2rem;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- GLOBAL NAVIGATION HEADER -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="brand">
@@ -328,8 +348,8 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="royal_hierarchy.html">Royal Hierarchy</a></li>
-                    <li><a href="state_hierarchy.html">State Hierarchy</a></li>
-                    <li><a href="archive.html" class="active">Archive</a></li>
+                    <li><a href="state_hierarchy.html" class="active">State Hierarchy</a></li>
+                    <li><a href="archive.html">Archive</a></li>
                     <li><a href="proclamation.html">Proclamation</a></li>
                     <li><a href="e_residency.html">E-Residency</a></li>
                 </ul>
@@ -337,172 +357,100 @@
         </div>
     </header>
 
-    <!-- HERO HEADER -->
     <section class="hero">
-        <span class="section-tag">Statutory Corpus & Public Records</span>
-        <h1 class="hero-title">Legislative Archive</h1>
+        <span class="section-tag">Governance & Institutional Architecture</span>
+        <h1 class="hero-title">State Hierarchy & Organs of Power</h1>
         <p class="hero-subtitle">
-            The official repository of all 19 enacted Statutory Instruments and the Royal Proclamation promulgated under the authority of Margrave Albrecht I[cite: 91, 92].
+            The formal administrative branches, legislative councils, executive chanceries, and judicial authorities established under the Foundational Charter.
         </p>
         <div class="gold-divider"></div>
     </section>
 
-    <!-- MAIN CONTENT AREA -->
     <div class="main-container">
         <section class="card">
-            <div class="section-header">
-                <span class="section-tag">Official Registry Index</span>
-                <h2 class="section-title">Foundational Acts of State</h2>
+            <div class="heraldry-display">
+                <img src="House Ister (1).jpg" alt="House of Ister Coat of Arms" class="heraldry-img">
+                <div class="heraldry-content">
+                    <span class="section-tag">Dynastic Authority</span>
+                    <h3>The House of Ister & Sovereign Executive</h3>
+                    <p>
+                        Governed under the supreme authority of <strong>Margrave Albrecht I</strong>, the State Hierarchy operates with absolute clarity and statutory rigour. The arms of the House of Ister symbolize the unification of crown prerogatives, territorial enclaves, and riverine heritage under the motto <em>"Domus Stat Flumen"</em>.
+                    </p>
+                    <ul>
+                        <li>Supreme Executive Power vested in the Crown</li>
+                        <li>Statutory Administration across 19 Enacted Instruments</li>
+                    </ul>
+                </div>
             </div>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Instrument</th>
-                            <th>Title & Classification</th>
-                            <th>Doc ID</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Royal Proclamation</strong></td>
-                            <td>Promulgation and Sealing of the Foundational Charter[cite: 91]<br><small style="color:var(--text-muted)">Royal Proclamation by Margrave Albrecht I[cite: 91]</small></td>
-                            <td><code>SMED-PROCLAMATION-2026</code></td>
-                            <td><a href="PROMULGATION AND SEALING OF THE FOUNDATIONAL CHARTER OF THE REALM.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument I</strong></td>
-                            <td>The Organic Act of Establishment[cite: 34]<br><small style="color:var(--text-muted)">Constitutional Law / State Foundation[cite: 34]</small></td>
-                            <td><code>SMED-FA-2026-001</code></td>
-                            <td><a href="INSTRUMENT I_ THE ORGANIC ACT OF ESTABLISHMENT, 2026.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument II</strong></td>
-                            <td>The Constitutional Charter of the Realm[cite: 28]<br><small style="color:var(--text-muted)">Constitutional Law / Governance Charter[cite: 28]</small></td>
-                            <td><code>SMED-FA-2026-002</code></td>
-                            <td><a href="INSTRUMENT II_ THE CONSTITUTIONAL CHARTER OF THE REALM, 2026.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument III</strong></td>
-                            <td>The Margravial Succession Act[cite: 22]<br><small style="color:var(--text-muted)">Constitutional Framework / Dynastic Law[cite: 22]</small></td>
-                            <td><code>SMED-FA-2026-003</code></td>
-                            <td><a href="INSTRUMENT III_ THE MARGRAVIIAL SUCCESSION ACT, 2026.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument IV</strong></td>
-                            <td>The State Identity, Regalia & Heritage Act[cite: 16]<br><small style="color:var(--text-muted)">Constitutional Law / State Heraldry[cite: 16]</small></td>
-                            <td><code>SMED-FA-2026-004</code></td>
-                            <td><a href="INSTRUMENT IV_ THE STATE IDENTITY, REGALIA & HERITAGE ACT, 2026.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument V</strong></td>
-                            <td>The Danubian Territorial Enclaves & Sovereign Boundaries Charter[cite: 11]<br><small style="color:var(--text-muted)">Territorial & Sovereign Law[cite: 11]</small></td>
-                            <td><code>SMED-FA-2026-005</code></td>
-                            <td><a href="INSTRUMENT V_ THE DANUBIAN TERRITORIAL ENCLAVES & SOVEREIGN BOUNDARIES CHARTER, 2026.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument VI</strong></td>
-                            <td>The Margravial Chancery & State Administration Act[cite: 6]<br><small style="color:var(--text-muted)">Administrative & Executive Law[cite: 6]</small></td>
-                            <td><code>SMED-FA-2026-006</code></td>
-                            <td><a href="Instrument VI_ The Margravial Chancery & State Administration Act.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument VII</strong></td>
-                            <td>The Judicature and Courts of Justice Act[cite: 1]<br><small style="color:var(--text-muted)">Judicial & Procedural Law[cite: 1]</small></td>
-                            <td><code>SMED-FA-2026-007</code></td>
-                            <td><a href="Instrument VII_ The Judicature and Courts of Justice Act.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument VIII</strong></td>
-                            <td>The National Honours, Chivalric Orders & Precedence Act[cite: 86]<br><small style="color:var(--text-muted)">Honours & Prerogative Law[cite: 86]</small></td>
-                            <td><code>SMED-FA-2026-008</code></td>
-                            <td><a href="Instrument VIII_ The National Honours, Chivalric Orders & Precedence Act.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument IX</strong></td>
-                            <td>The State Treasury, Currency & Fiscal Regulation Act[cite: 81]<br><small style="color:var(--text-muted)">Financial & Fiscal Law[cite: 81]</small></td>
-                            <td><code>SMED-FA-2026-009</code></td>
-                            <td><a href="Instrument IX_ The State Treasury, Currency & Fiscal Regulation Act.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument X</strong></td>
-                            <td>The Citizenship, Naturalisation & Immigration Act[cite: 76]<br><small style="color:var(--text-muted)">Citizenship & Immigration Law[cite: 76]</small></td>
-                            <td><code>SMED-FA-2026-010</code></td>
-                            <td><a href="Instrument X_ The Citizenship, Naturalisation & Immigration Act.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument XI</strong></td>
-                            <td>The Digital Infrastructure & E-Residency Framework Act[cite: 71]<br><small style="color:var(--text-muted)">Digital Governance & Administrative Law[cite: 71]</small></td>
-                            <td><code>SMED-FA-2026-011</code></td>
-                            <td><a href="Instrument XI_ The Digital Infrastructure & E-Residency Framework Act.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument XII</strong></td>
-                            <td>The Commerce, Corporations & Financial Services Act[cite: 66]<br><small style="color:var(--text-muted)">Corporate & Financial Law[cite: 66]</small></td>
-                            <td><code>SMED-FA-2026-012</code></td>
-                            <td><a href="Instrument XII_ The Commerce, Corporations & Financial Services Act.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument XIII</strong></td>
-                            <td>The Criminal Code & Penal Administration Act[cite: 61]<br><small style="color:var(--text-muted)">Criminal Law & Penal Administration[cite: 61]</small></td>
-                            <td><code>SMED-FA-2026-013</code></td>
-                            <td><a href="Instrument XIII_ The Criminal Code & Penal Administration Act.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument XIV</strong></td>
-                            <td>The Foreign Relations & Diplomatic Immunity Act[cite: 56]<br><small style="color:var(--text-muted)">External & Diplomatic Law[cite: 56]</small></td>
-                            <td><code>SMED-FA-2026-014</code></td>
-                            <td><a href="Instrument XIV_ The Foreign Relations & Diplomatic Immunity Act.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument XV</strong></td>
-                            <td>The Maritime, Waterway & Environmental Protection Act[cite: 51]<br><small style="color:var(--text-muted)">Environmental & Maritime Law[cite: 51]</small></td>
-                            <td><code>SMED-FA-2026-015</code></td>
-                            <td><a href="Instrument XV_ The Maritime, Waterway & Environmental Protection Act.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument XVI</strong></td>
-                            <td>The Intellectual Property & State Registry Charter[cite: 46]<br><small style="color:var(--text-muted)">Intellectual Property & Administrative Law[cite: 46]</small></td>
-                            <td><code>SMED-FA-2026-016</code></td>
-                            <td><a href="Instrument XVI_ The Intellectual Property & State Registry Charter.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument XVII</strong></td>
-                            <td>The Culture, Heritage & National Trust Act[cite: 41]<br><small style="color:var(--text-muted)">Cultural & Heritage Law / Public Record[cite: 41]</small></td>
-                            <td><code>SMED-FA-2026-017</code></td>
-                            <td><a href="Instrument XVII_ The Culture, Heritage & National Trust Act.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument XVIII</strong></td>
-                            <td>The Emergency Powers & State Contingency Act[cite: 98]<br><small style="color:var(--text-muted)">Constitutional & Emergency Law[cite: 98]</small></td>
-                            <td><code>SMED-FA-2026-018</code></td>
-                            <td><a href="Instrument XVIII_ The Emergency Powers & State Contingency Act.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instrument XIX</strong></td>
-                            <td>The Archive Codification & Promulgation Enactment[cite: 92]<br><small style="color:var(--text-muted)">Constitutional & Archive Codification Law[cite: 92]</small></td>
-                            <td><code>SMED-FA-2026-019</code></td>
-                            <td><a href="Instrument XIX_ The Archive Codification & Promulgation Enactment.pdf" target="_blank" class="btn-download">View PDF</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+
+            <div class="section-header">
+                <span class="section-tag">Branches of Government</span>
+                <h2 class="section-title">The Three Pillars of Administration</h2>
+            </div>
+            
+            <div class="grid-3">
+                <div class="info-box">
+                    <div class="info-icon">I</div>
+                    <h3>The Margravial Chancery</h3>
+                    <p>Superintended by the High Chancellor under Instrument VI. Manages state administration, official gazettes (*Acta Margravialis*), foreign correspondence, and the Great Seal.</p>
+                    <ul>
+                        <li>Executive Policy Coordination</li>
+                        <li>Keeper of the Great Seal</li>
+                        <li>Civil Service Registry</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">II</div>
+                    <h3>The High Commission</h3>
+                    <p>Established under Instrument II as the legislative and advisory assembly. Comprises High Commissioners, Commissioners, and Consultative Members responsible for enacting statutes.</p>
+                    <ul>
+                        <li>Legislative Debates & Statutes</li>
+                        <li>Ministerial Portfolios</li>
+                        <li>Civic & Party Delegations</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">III</div>
+                    <h3>The Judicature</h3>
+                    <p>Constituted under Instrument VII, featuring the Sovereign's High Court presided over by the High Justiciar, alongside Enclave Magistrates' Courts ensuring impartial summary justice.</p>
+                    <ul>
+                        <li>High Court & High Justiciar</li>
+                        <li>Enclave Magistrates' Courts</li>
+                        <li>Roll of Legal Advocates</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="section-header">
+                <span class="section-tag">Operational Oversight</span>
+                <h2 class="section-title">Specialized State Departments</h2>
+            </div>
+            <div class="grid-3">
+                <div class="info-box">
+                    <div class="info-icon">✦</div>
+                    <h3>The State Treasury</h3>
+                    <p>Managed by the Chancellor of the Exchequer (Instrument IX). Oversees public revenues, appropriations, and the acquisition of gold and strategic precious reserves backing the Danubian Florin.</p>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">✦</div>
+                    <h3>Intellectual Property Office (IPOD)</h3>
+                    <p>Superintends patents, trademarks, industrial designs, and official top-level digital namespace registries under Instrument XVI, protecting sovereign symbols and corporate rights.</p>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">✦</div>
+                    <h3>Civil Defence & Ceremonial Guard</h3>
+                    <p>Strictly ceremonial and civilian organizations (Instrument V & XIII) maintaining public order, civic pageantry, and heritage preservation without police or military powers.</p>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
-            <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Crest" class="footer-crest">
-            <p class="footer-text">
-                Published under the Authority of the Margravial Chancery of Danuvius. All statutory rights, sovereign prerogatives, and cryptographic registers reserved under the Foundational Charter.
-            </p>
-            <div class="footer-copy">
-                &copy; 2026 Sovereign Margraviate of Danuvius • House of Ister
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+            <img src="
