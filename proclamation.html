@@ -69,9 +69,10 @@
             color: inherit;
         }
 
+        /* INCREASED HEADER CREST SIZE */
         .brand-crest {
-            width: 48px;
-            height: 48px;
+            width: 85px;
+            height: 85px;
             object-fit: contain;
             border-radius: 50%;
             border: 2px solid var(--border-gold);
@@ -96,4 +97,343 @@
 
         nav ul {
             display: flex;
-            list-style:
+            list-style: none;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            padding: 0.4rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-gold);
+            border-bottom-color: var(--border-gold);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(ellipse at top, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            color: var(--text-gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .gold-divider {
+            height: 2px;
+            width: 120px;
+            background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+            margin: 2rem auto;
+        }
+
+        /* MAIN CONTAINER & PROCLAMATION CARD */
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+
+        .proclamation-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 4rem 3rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 25px rgba(197, 160, 89, 0.15);
+            position: relative;
+        }
+
+        .proclamation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+        }
+
+        .proc-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-gold-light);
+            padding-bottom: 2rem;
+        }
+
+        .proc-header h2 {
+            font-size: 1.3rem;
+            color: var(--text-gold);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .proc-header h3 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .proc-header p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .proc-body {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .proc-body p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .proc-body ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .proc-body li {
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .proc-body li strong {
+            color: var(--text-gold-light);
+            font-family: 'Cinzel', serif;
+        }
+
+        .proc-signature {
+            text-align: right;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-gold-light);
+            padding-top: 2rem;
+        }
+
+        .proc-signature h4 {
+            font-size: 1.2rem;
+            color: var(--text-gold);
+            margin-bottom: 0.2rem;
+        }
+
+        .proc-signature p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn-download-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #c5a059 0%, #9a7b38 100%);
+            color: #000;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #b38f42 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border-gold-light);
+            background: rgba(10, 15, 28, 0.95);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* INCREASED FOOTER CREST SIZE */
+        .footer-crest {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border: 1px solid var(--border-gold);
+            border-radius: 50%;
+            padding: 2px;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            max-width: 600px;
+        }
+
+        .footer-copy {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                justify-content: center;
+                gap: 1rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .proclamation-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- GLOBAL NAVIGATION HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Sovereign Margraviate of Danuvius Crest" class="brand-crest">
+                <div class="brand-text">
+                    <h1>Sovereign Margraviate of Danuvius</h1>
+                    <p>Official State Portal</p>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="royal_hierarchy.html">Royal Hierarchy</a></li>
+                    <li><a href="state_hierarchy.html">State Hierarchy</a></li>
+                    <li><a href="archive.html">Archive</a></li>
+                    <li><a href="proclamation.html" class="active">Proclamation</a></li>
+                    <li><a href="e_residency.html">E-Residency</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO HEADER -->
+    <section class="hero">
+        <span class="section-tag">Royal Edicts & Decrees</span>
+        <h1 class="hero-title">Royal Proclamation</h1>
+        <p class="hero-subtitle">
+            The official promulgation and sealing of the Foundational Charter of the Realm by Margrave Albrecht I.
+        </p>
+        <div class="gold-divider"></div>
+    </section>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="main-container">
+        <div class="proclamation-card">
+            <div class="proc-header">
+                <h2>By the Sovereign Margrave of Danuvius</h2>
+                <h3>A Royal Proclamation</h3>
+                <p>Promulgation and Sealing of the Foundational Charter of the Realm</p>
+            </div>
+
+            <div class="proc-body">
+                <p>
+                    <strong>ALBRECHT I</strong>, by the Grace of God, Sovereign Margrave of Danuvius, Head of the House of Ister, Defender of the Realm and Sovereign of the Enclaves, to all Our loving subjects, citizens, E-Residents, and to all to whom these presents shall come, GREETINGS:
+                </p>
+                <p>
+                    <strong>WHEREAS</strong> upon Our accession in this inaugural year of Our Reign, We undertook the solemn duty to establish, secure, and codify the legal architecture, governance, and civil order of the Sovereign Margraviate of Danuvius upon principles of justice, historical continuity, and unyielding statutory rigour;
+                </p>
+                <p>
+                    <strong>AND WHEREAS</strong> Our Margravial Chancery, acting with the advice and consent of the High Council of the Realm, has successfully drafted, reviewed, and finalised the complete legislative sequence comprising Nineteen Distinct Instruments, ranging from the foundational organic acts of statehood to the final archive codification and promulgation enactment;
+                </p>
+                <p>
+                    <strong>NOW, KNOW YE</strong> that We, by Our Royal Prerogative and Sovereign Authority, do hereby proclaim, declare, and command as follows:
+                </p>
+                <ol>
+                    <li>
+                        <strong>Promulgation of the Archive:</strong> Instruments I through XIX, inclusive, having been enacted and ratified during this inaugural year, are formally promulgated as the supreme, unified Foundational Charter of the Realm, holding universal and binding force of law across all physical enclaves, digital domains, vessels, and diplomatic missions of Danuvius worldwide.
+                    </li>
+                    <li>
+                        <strong>Execution and Sealing:</strong> The definitive master copy of the Foundational Charter has been engrossed upon archival vellum, authenticated under Our Hand and the Great Seal of Danuvius, alongside its permanent cryptographic registration upon the sovereign digital ledger, and deposited in the secure vaults of the Margravial State Archives.
+                    </li>
+                    <li>
+                        <strong>Command to Observe:</strong> All state officials, magistrates, civil servants, subjects, and residents of the Realm are hereby commanded to take notice of this Proclamation and to govern themselves strictly in accordance with the provisions of the Foundational Charter.
+                    </li>
+                </ol>
+                <p style="text-align: center; font-style: italic; margin-top: 2rem;">
+                    Given under Our Hand and the Great Seal of the Sovereign Margraviate of Danuvius, this 18th day of May, 2026, being the first year of Our Reign.
+                </p>
+            </div>
+
+            <div class="proc-signature">
+                <h4>Albrecht I</h4>
+                <p>Margrave Albrecht I • Sovereign of Danuvius, Head of the House of Ister</p>
+            </div>
+
+            <div class="btn-download-container">
+                <a href="PROMULGATION AND SEALING OF THE FOUNDATIONAL CHARTER OF THE REALM.pdf" target="_blank" class="btn-gold">Download Original Proclamation PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Crest" class="footer-crest">
+            <p class="footer-text">
+                Published under the Authority of the Margravial Chancery of Danuvius. All statutory rights, sovereign prerogatives, and cryptographic registers reserved under the Foundational Charter.
+            </p>
+            <div class="footer-copy">
+                &copy; 2026 Sovereign Margraviate of Danuvius • House of Ister
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
