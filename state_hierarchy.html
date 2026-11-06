@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Hierarchy | Sovereign Margraviate of Danuvius</title>
+    <title>State Hierarchy | Sovereign Margraviate of Danuvius</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -18,7 +18,11 @@
             --shadow-gold: 0 10px 30px -10px rgba(197, 160, 89, 0.2);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             background-color: var(--bg-dark);
@@ -38,6 +42,7 @@
             letter-spacing: 1px;
         }
 
+        /* HEADER & NAVIGATION */
         header {
             border-bottom: 1px solid var(--border-gold-light);
             background: rgba(15, 23, 42, 0.9);
@@ -64,6 +69,7 @@
             color: inherit;
         }
 
+        /* HEADER CREST SIZE */
         .brand-crest {
             width: 85px;
             height: 85px;
@@ -72,7 +78,7 @@
             border: 2px solid var(--border-gold);
             background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
             box-shadow: 0 0 15px rgba(197, 160, 89, 0.25);
-            padding: 3px;
+            padding: 2px;
         }
 
         .brand-text h1 {
@@ -113,10 +119,12 @@
             border-bottom-color: var(--border-gold);
         }
 
+        /* HERO SECTION */
         .hero {
             padding: 5rem 2rem 4rem;
             text-align: center;
             position: relative;
+            background: radial-gradient(ellipse at top, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
         }
 
         .hero-title {
@@ -142,13 +150,14 @@
             margin: 2rem auto;
         }
 
+        /* MAIN CONTAINER & CARDS */
         .main-container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem 5rem;
             display: flex;
             flex-direction: column;
-            gap: 4rem;
+            gap: 3rem;
         }
 
         .card {
@@ -192,51 +201,16 @@
             color: var(--text-main);
         }
 
-        .heraldry-display {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            background: rgba(10, 15, 28, 0.6);
-            border: 1px solid var(--border-gold);
-            border-radius: 8px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .heraldry-img {
-            width: 220px;
-            height: 220px;
-            object-fit: contain;
-            border-radius: 8px;
-            border: 2px solid var(--border-gold);
-            background: #000;
-            box-shadow: 0 0 25px rgba(197, 160, 89, 0.2);
-            padding: 5px;
-        }
-
-        .heraldry-content {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .heraldry-content h3 {
-            color: var(--text-gold);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .heraldry-content p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
         }
 
         .info-box {
@@ -273,7 +247,10 @@
             margin-bottom: 1rem;
         }
 
-        .info-box ul { list-style: none; padding: 0; }
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
 
         .info-box li {
             font-size: 0.9rem;
@@ -291,6 +268,7 @@
             font-size: 0.7rem;
         }
 
+        /* FOOTER */
         footer {
             margin-top: auto;
             border-top: 1px solid var(--border-gold-light);
@@ -308,14 +286,14 @@
             gap: 1.5rem;
         }
 
+        /* FOOTER CREST SIZE */
         .footer-crest {
             width: 100px;
             height: 100px;
             object-fit: contain;
             border: 1px solid var(--border-gold);
             border-radius: 50%;
-            padding: 3px;
-            background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
+            padding: 2px;
         }
 
         .footer-text {
@@ -330,10 +308,25 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                justify-content: center;
+                gap: 1rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <!-- GLOBAL NAVIGATION HEADER -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="brand">
@@ -347,8 +340,8 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="royal_hierarchy.html" class="active">Royal Hierarchy</a></li>
-                    <li><a href="state_hierarchy.html">State Hierarchy</a></li>
+                    <li><a href="royal_hierarchy.html">Royal Hierarchy</a></li>
+                    <li><a href="state_hierarchy.html" class="active">State Hierarchy</a></li>
                     <li><a href="archive.html">Archive</a></li>
                     <li><a href="proclamation.html">Proclamation</a></li>
                     <li><a href="e_residency.html">E-Residency</a></li>
@@ -357,67 +350,107 @@
         </div>
     </header>
 
+    <!-- HERO HEADER -->
     <section class="hero">
-        <span class="section-tag">Dynastic Lineage & Crown Prerogative</span>
-        <h1 class="hero-title">Royal Hierarchy</h1>
+        <span class="section-tag">Executive & Administrative Governance</span>
+        <h1 class="hero-title">State Hierarchy</h1>
         <p class="hero-subtitle">
-            The sovereign ruler, dynastic succession laws, and royal privileges of the House of Ister.
+            The civil executive authority, advisory assemblies, and judicial organs established under Instrument II and Instrument VI of the realm.
         </p>
         <div class="gold-divider"></div>
     </section>
 
+    <!-- MAIN CONTAINER -->
     <div class="main-container">
+
+        <!-- EXECUTIVE AUTHORITY & HIGH COMMISSIONER -->
         <section class="card">
-            <div class="heraldry-display">
-                <img src="House Ister (1).jpg" alt="House of Ister Coat of Arms" class="heraldry-img">
-                <div class="heraldry-content">
-                    <span class="section-tag">Sovereign House</span>
-                    <h3>The House of Ister</h3>
-                    <p>
-                        The ruling house of the Sovereign Margraviate of Danuvius. Under the motto <em>"Domus Stat Flumen"</em>, the House of Ister embodies historical continuity, unyielding sovereignty, and the guardian stewardship of the Danubian Enclaves.
-                    </p>
-                    <ul>
-                        <li>Fountain of Honour (Fons Honorum)</li>
-                        <li>Sole Custodian of the Crown and Great Seal</li>
-                    </ul>
-                </div>
-            </div>
-
             <div class="section-header">
-                <span class="section-tag">Monarch & Reign</span>
-                <h2 class="section-title">His Serene Highness Margrave Albrecht I</h2>
+                <span class="section-tag">Civil Head of State Administration</span>
+                <h2 class="section-title">The High Commissioner & Executive Authority</h2>
             </div>
-
+            
             <div class="grid-2">
                 <div class="info-box">
                     <div class="info-icon">I</div>
-                    <h3>The Reigning Sovereign</h3>
+                    <h3>The High Commissioner</h3>
                     <p>
-                        <strong>HSH Margrave Albrecht I</strong> serves as Sovereign of Danuvius and Head of the House of Ister. Exercising supreme executive authority, command over civil administration, and the power of Royal Assent under the Foundational Charter.
+                        Appointed by the Sovereign under Instrument VI (Margravial Chancery & State Administration Act). The High Commissioner acts as Chief Executive Officer of civil administration, overseeing government agencies and statutory compliance.
                     </p>
                     <ul>
-                        <li>Sole Fount of Honour & Chivalric Orders</li>
-                        <li>Supreme Command of State Administration</li>
-                        <li>Ratifier of all Statutory Instruments</li>
+                        <li>Direction of Civil Ministries & Agencies</li>
+                        <li>Implementation of Statutory Instruments</li>
+                        <li>Primary liaison to the Sovereign Head of State</li>
                     </ul>
                 </div>
 
                 <div class="info-box">
                     <div class="info-icon">II</div>
-                    <h3>Dynastic Succession & Primogeniture</h3>
+                    <h3>The Executive Council</h3>
                     <p>
-                        Established under <strong>Instrument III (The Margravial Succession Act)</strong>. Succession to the Margravial Throne passes by hereditary descent through the legitimate bloodline of the House of Ister strictly governed by Absolute Primogeniture.
+                        Chaired by the High Commissioner, the Executive Council serves as the supreme administrative cabinet. It oversees daily governance, treasury operations, digital infrastructure, and regulatory enforcement.
                     </p>
                     <ul>
-                        <li>Absolute Primogeniture (Succession regardless of sex)</li>
-                        <li>Formal Confirmation and Oath of the Heir Apparent</li>
-                        <li>Regency protocols for minority or infirmity</li>
+                        <li>Chancery & Administrative Policy</li>
+                        <li>Treasury & Fiscal Regulation (Instrument IX)</li>
+                        <li>E-Residency Operations & Public Records</li>
                     </ul>
                 </div>
             </div>
         </section>
+
+        <!-- CONSULTATIVE COUNCIL & ADVISORY BODIES -->
+        <section class="card">
+            <div class="section-header">
+                <span class="section-tag">Legislative & Representative Bodies</span>
+                <h2 class="section-title">The Consultative Council & Commissions</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="info-box">
+                    <div class="info-icon">III</div>
+                    <h3>The Consultative Council</h3>
+                    <p>
+                        Comprising representative delegates, subject-matter experts, and designated public advisors who review proposed statutory amendments and submit policy recommendations to the Executive Council.
+                    </p>
+                    <ul>
+                        <li>Statutory Policy Review</li>
+                        <li>Public & E-Resident Representation</li>
+                        <li>Civic Advice to the Sovereign</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">IV</div>
+                    <h3>Consultative Members</h3>
+                    <p>
+                        Distinguished citizens and verified E-Residents appointed to specialized sub-committees to advise on commerce, maritime affairs, environmental protection, and digital governance.
+                    </p>
+                    <ul>
+                        <li>Committee Advisory Roles</li>
+                        <li>Digital Governance Input</li>
+                        <li>International Policy Working Groups</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">V</div>
+                    <h3>Judicature & Legal Organs</h3>
+                    <p>
+                        Established under Instrument VII (Judicature and Courts of Justice Act). Independent judicial magistrates enforce the penal code, resolve corporate disputes, and maintain constitutional compliance.
+                    </p>
+                    <ul>
+                        <li>High Court of the Realm</li>
+                        <li>Administrative & Commercial Tribunals</li>
+                        <li>Magisterial Legal Supervision</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
     </div>
 
+    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Crest" class="footer-crest">
