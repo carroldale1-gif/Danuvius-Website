@@ -18,7 +18,11 @@
             --shadow-gold: 0 10px 30px -10px rgba(197, 160, 89, 0.2);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             background-color: var(--bg-dark);
@@ -38,6 +42,7 @@
             letter-spacing: 1px;
         }
 
+        /* HEADER & NAVIGATION */
         header {
             border-bottom: 1px solid var(--border-gold-light);
             background: rgba(15, 23, 42, 0.9);
@@ -64,6 +69,7 @@
             color: inherit;
         }
 
+        /* HEADER CREST SIZE */
         .brand-crest {
             width: 85px;
             height: 85px;
@@ -72,7 +78,7 @@
             border: 2px solid var(--border-gold);
             background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
             box-shadow: 0 0 15px rgba(197, 160, 89, 0.25);
-            padding: 3px;
+            padding: 2px;
         }
 
         .brand-text h1 {
@@ -113,10 +119,12 @@
             border-bottom-color: var(--border-gold);
         }
 
+        /* HERO SECTION */
         .hero {
             padding: 5rem 2rem 4rem;
             text-align: center;
             position: relative;
+            background: radial-gradient(ellipse at top, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
         }
 
         .hero-title {
@@ -142,6 +150,7 @@
             margin: 2rem auto;
         }
 
+        /* MAIN CONTAINER & CARDS */
         .main-container {
             max-width: 1280px;
             margin: 0 auto;
@@ -174,6 +183,7 @@
 
         .section-header {
             margin-bottom: 2rem;
+            text-align: center;
         }
 
         .section-tag {
@@ -189,16 +199,90 @@
         .section-title {
             font-size: 1.8rem;
             color: var(--text-main);
+        }
+
+        /* FLAG FEATURE DISPLAY */
+        .flag-display {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            background: rgba(10, 15, 28, 0.6);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .flag-img {
+            width: 280px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 2px solid var(--border-gold);
+            box-shadow: 0 0 25px rgba(197, 160, 89, 0.25);
+        }
+
+        .flag-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .flag-content h3 {
+            color: var(--text-gold);
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        .card p {
+        .flag-content p {
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            text-align: justify;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
 
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 6px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-gold);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--text-gold);
+            margin-bottom: 1rem;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+        }
+
+        .info-box h3 {
+            font-size: 1.3rem;
+            color: var(--text-gold-light);
+            margin-bottom: 1rem;
+        }
+
+        .info-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
         footer {
             margin-top: auto;
             border-top: 1px solid var(--border-gold-light);
@@ -216,14 +300,14 @@
             gap: 1.5rem;
         }
 
+        /* FOOTER CREST SIZE */
         .footer-crest {
             width: 100px;
             height: 100px;
             object-fit: contain;
             border: 1px solid var(--border-gold);
             border-radius: 50%;
-            padding: 3px;
-            background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
+            padding: 2px;
         }
 
         .footer-text {
@@ -238,10 +322,28 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                justify-content: center;
+                gap: 1rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .flag-display {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <!-- GLOBAL NAVIGATION HEADER -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="brand">
@@ -265,30 +367,75 @@
         </div>
     </header>
 
+    <!-- HERO HEADER -->
     <section class="hero">
-        <span class="section-tag">Historical & Institutional Identity</span>
-        <h1 class="hero-title">About the Realm</h1>
+        <span class="section-tag">Heritage, Mythos & Sovereign Foundation</span>
+        <h1 class="hero-title">About the Margraviate</h1>
         <p class="hero-subtitle">
-            An overview of the heritage, foundational principles, and governance framework of the Sovereign Margraviate of Danuvius.
+            Exploring the ancient river deity lineage, the martial legacy of Scottish Mercenaries, and the sovereign symbolism of the Sovereign Margraviate of Danuvius.
         </p>
         <div class="gold-divider"></div>
     </section>
 
+    <!-- MAIN CONTAINER -->
     <div class="main-container">
+
+        <!-- STATE FLAG & SYMBOLISM DISPLAY -->
         <section class="card">
-            <div class="section-header">
-                <span class="section-tag">The Sovereign Enclaves</span>
-                <h2 class="section-title">Heritage & Continuity</h2>
+            <div class="flag-display">
+                <img src="danubia flag.png" alt="State Flag of Danuvius" class="flag-img">
+                <div class="flag-content">
+                    <span class="section-tag">Vexillology & Sovereign Emblems</span>
+                    <h3>The National Flag of Danuvius</h3>
+                    <p>
+                        The official banner of the Sovereign Margraviate features deep Danubian navy blue paired with sovereign imperial gold. The navy field represents the eternal flow and depth of the Danube River, while the gold charged insignia symbolises the divine authority, vigilance, and enduring constitutional reign of the House of Ister.
+                    </p>
+                </div>
             </div>
-            <p>
-                The Sovereign Margraviate of Danuvius is established upon principles of unyielding statutory rigour, historical continuity, and sovereign dignity. Under the reign of <strong>Margrave Albrecht I</strong> and the House of Ister, the Realm unites traditional constitutional governance with modern digital infrastructure.
-            </p>
-            <p>
-                Operating through a comprehensive framework of 19 enacted Statutory Instruments and the Royal Proclamation, the Realm secures its territorial enclaves, maritime waterways, public finances, and intellectual property while preserving rich cultural heritage and open administrative transparency.
-            </p>
+
+            <div class="section-header">
+                <span class="section-tag">Historical Roots & River Mythos</span>
+                <h2 class="section-title">The Legend of Danuvius & The Great Waterway</h2>
+            </div>
+
+            <div class="grid-2">
+                <div class="info-box">
+                    <div class="info-icon">I</div>
+                    <h3>The Ancient River God: Danuvius</h3>
+                    <p>
+                        The realm takes its name directly from <strong>Danuvius</strong>, the Celtic and Roman deity who personified the majestic Danube River. Revered across antiquity as the lord of the swift waters and protector of frontier settlements, Danuvius represented strength, movement, and unyielding endurance—traits that continue to define the constitutional identity and sovereign spirit of our realm.
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">II</div>
+                    <h3>Historical Significance of the River Segment</h3>
+                    <p>
+                        The specific section of the Danube overseen by the Margraviate has served for millennia as a vital geopolitical nexus. From serving as the formidable *Limes* frontier of the Roman Empire to functioning as a crucial trade artery connecting Eastern and Western Europe, this waterway has witnessed centuries of diplomacy, fortification, and cultural exchange.
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">III</div>
+                    <h3>Legacy of the Scottish Mercenaries</h3>
+                    <p>
+                        In the 17th century, regiments of intrepid **Scottish Mercenaries** traveled to the Danube basin during continental conflicts such as the Thirty Years' War. Famed for their discipline, fierce independence, and martial skill, these Highland and Lowland soldiers formed strategic garrisons along the riverbanks. Their martial legacy and steadfast honour are preserved in the founding traditions of the Danubian sovereign state.
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">IV</div>
+                    <h3>Modern Sovereign Governance</h3>
+                    <p>
+                        Today, under the leadership of HSH Margrave Albrecht I and the House of Ister, the Margraviate unites this rich historical tapestry with state-of-the-art digital infrastructure and statutory governance, bridging ancient river heritage with 21st-century sovereignty.
+                    </p>
+                </div>
+            </div>
         </section>
+
     </div>
 
+    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <img src="The_Soverign_Margraviate_of_Danuvius_Crest-removebg-preview.png" alt="Crest" class="footer-crest">
