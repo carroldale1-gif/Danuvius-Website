@@ -310,7 +310,13 @@
             text-decoration: underline;
         }
 
-        /* BANNER SHOWCASE BOX */
+        /* BANNER & MEDIA SHOWCASE BOXES */
+        .showcase-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
         .showcase-box {
             display: flex;
             align-items: center;
@@ -323,7 +329,7 @@
             justify-content: center;
         }
 
-        .showcase-img {
+        .showcase-img-crest {
             width: 220px;
             height: 220px;
             object-fit: contain;
@@ -331,6 +337,15 @@
             border: 2px solid var(--border-gold);
             background: #000;
             padding: 6px;
+            box-shadow: 0 0 25px rgba(197, 160, 89, 0.25);
+        }
+
+        .showcase-img-flag {
+            width: 280px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 2px solid var(--border-gold);
             box-shadow: 0 0 25px rgba(197, 160, 89, 0.25);
         }
 
@@ -457,18 +472,36 @@
     <!-- MAIN CONTAINER -->
     <div class="main-container">
 
-        <!-- SHOWCASE: HERALDRY & SOVEREIGN IDENTIFIER -->
+        <!-- SHOWCASE: HERALDRY & STATE FLAG -->
         <section class="card">
-            <div class="showcase-box">
-                <img src="state.crest.png" alt="State Crest Heraldry" class="showcase-img">
-                <div class="showcase-content">
-                    <span class="section-tag">Sovereign Heraldry & Symbols</span>
-                    <h3>The Grand Seal of Danuvius</h3>
-                    <p>
-                        Surmounted by the <strong>Margravial Crown</strong> and flanked by white griffin guardians, the State Crest encapsulates our sovereign authority. At its core, the <strong>Ister Dynasty Crest</strong> rests above the flowing navy and gold river waves, representing the eternal strength of the Danube frontier.
-                    </p>
-                    <a href="about.html" class="link-text">Read Full Heraldry Breakdown &rarr;</a>
+            <div class="showcase-grid">
+                
+                <!-- STATE CREST BOX -->
+                <div class="showcase-box">
+                    <img src="state.crest.png" alt="State Crest Heraldry" class="showcase-img-crest">
+                    <div class="showcase-content">
+                        <span class="section-tag">Sovereign Heraldry & Symbols</span>
+                        <h3>The Grand Seal of Danuvius</h3>
+                        <p>
+                            Surmounted by the <strong>Margravial Crown</strong> and flanked by white griffin guardians, the State Crest encapsulates our sovereign authority. At its core, the <strong>Ister Dynasty Crest</strong> rests above the flowing navy and gold river waves, representing the eternal strength of the Danube frontier.
+                        </p>
+                        <a href="about.html" class="link-text">Read Full Heraldry Breakdown &rarr;</a>
+                    </div>
                 </div>
+
+                <!-- NATIONAL FLAG BOX -->
+                <div class="showcase-box">
+                    <img src="danubia flag.png" alt="State Flag of Danuvius" class="showcase-img-flag">
+                    <div class="showcase-content">
+                        <span class="section-tag">National Banner & Vexillology</span>
+                        <h3>The Sovereign Flag of Danuvius</h3>
+                        <p>
+                            The state flag features deep Danubian navy blue paired with sovereign imperial gold. The navy field represents the eternal flow and depth of the Danube River, while the gold charged insignia symbolizes the divine authority, vigilance, and constitutional reign of the House of Ister.
+                        </p>
+                        <a href="about.html" class="link-text">Explore National History & Legend &rarr;</a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
